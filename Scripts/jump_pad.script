@@ -1,0 +1,8 @@
+//player move [offsetX] [offsetY] [offsetZ] 
+//sound [name] [path] - loads sound and sets it's name. Path rules are the same as for images. 
+sound woosh Sounds/jump.wav //- loads sound and sets it's name. Path rules are the same as for images.
+auto 1
+play sound woosh
+player move 0 0 512
+keeptrigger 
+map quickreturn keepsounds3 

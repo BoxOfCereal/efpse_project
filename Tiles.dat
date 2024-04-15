@@ -1,0 +1,243 @@
+tile ColumnBig
+circle 0 0 0 64 32 12
+tile ColumnSmall
+circle 0 0 0 64 16 12
+tile ramp_w
+slope 0 0 0 64 -32 -32 32 -32 32 32 -32 32
+cap
+doublesided
+tile ramp_e
+slope 0 0 0 64 32.00297 31.99703 -31.99703 32.00297 -32.00297 -31.99703 31.99703 -32.00297
+cap
+doublesided
+tile ramp_s
+slope 0 0 0 64 -31.99555 32.00445 -32.00445 -31.99555 31.99555 -32.00445 32.00445 31.99555
+cap
+doublesided
+tile cr_
+cornerslope 0 0 0 64 32 32 -32 32 -32 -32
+tile table
+polygon -20 0 20 16 -4 -4 4 -4 4 4 -4 4
+polygon 20 0 -20 16 -4 -4 4 -4 4 4 -4 4
+polygon -20 0 -20 16 -4 -4 4 -4 4 4 -4 4
+polygon 20 0 20 16 -4 -4 4 -4 4 4 -4 4
+polygon 0 16 0 8 -32 -32 32 -32 32 32 -32 32
+tile pillar
+circle 0 0 0 64 16 12
+polygon 20 0 0 64 -4.000185 3.999814 -3.999814 -4.000185 4.000185 -3.999814 3.999814 4.000185
+polygon -20 0 0 64 -4 -4 4 -4 4 4 -4 4
+polygon 0 0 20 64 -4 -4 4 -4 4 4 -4 4
+polygon 0 0 -20 64 -4 -4 4 -4 4 4 -4 4
+tile lower
+circle 0 0 0 64 4 12
+tile mid
+polygon 0 0 0 32 -16 -16 16 -16 16 16 -16 16
+polygon -15 15 8 8 -4 -4 4 -4 4 4 -4 4
+polygon -15 15 -8 8 -4 -4 4 -4 4 4 -4 4
+cap
+doublesided
+tile big-wall
+polygon 0 0 0 1024 -256 -256 256 -256 256 256 -256 256
+tile big-tree
+polygon 0 0 0 512 -16 -16 16 -16 16 16 -16 16
+polygon 0 512 0 128 -64 -64 64 -64 64 64 -64 64
+tile crock
+polygon 0 0 0 32 -16 -16 16 -16 16 16 -16 16
+cap
+tile UnnamedTile
+
+tile bg
+polygon 0 0 0 512 -64 -64 64 -64 64 64 -64 64
+tile lanturn
+polygon 0 8 0 48 -16 -16 16 -16 16 16 -16 16
+polygon 0 56 0 8 -4 -4 4 -4 4 4 -4 4
+tile overhang
+polygon 0 0 0 8 -32 -32 32 -32 32 32 -32 32
+cap
+doublesided
+tile window
+polygon 0 0 32 64 -32 -4 32 -4 32 4 -32 4
+tile fence-horiz
+polygon -24 0 0 32 -4 -4 4 -4 4 4 -4 4
+polygon 24 0 0 32 -4 -4 4 -4 4 4 -4 4
+polygon 0 22 0 8 -32 -4 32 -4 32 4 -32 4
+polygon 0 4 0 8 -32 -4 32 -4 32 4 -32 4
+tile fence-vert
+polygon 0 0 24 32 -4 -4 4 -4 4 4 -4 4
+polygon 0 0 -24 32 -4 -4 4 -4 4 4 -4 4
+polygon 0 4 0 8 -4 -32 4 -32 4 32 -4 32
+polygon 0 22 0 8 -4 -32 4 -32 4 32 -4 32
+tile BARREL
+circle 0 16 0 8 32 12
+circle 0 0 0 8 30 12
+circle 0 28 0 8 30 12
+circle 0 0 0 32 29 12
+tile test
+polygon 0 0 0 64 11.31292 -33.94139 33.94086 -11.3145 -11.31292 33.94139 -33.94086 11.3145
+tile testivis
+ipolygon 0 0 0 64 -4 -4 4 -4 4 4 -4 4
+cap
+doublesided
+tile 32_Slope_U
+slope 0 0 0 32 -32 -32 32 -32 32 32 -32 32
+cap
+doublesided
+tile Dungeon_wall_bottom_slant_U
+slope 0 0 -16 32 -32 -16 32 -16 32 16 -32 16
+polygon 0 0 -28 64 -32 -4 32 -4 32 4 -32 4
+tile Dungeon_wall_bottom_slant_D
+slope 0 0 16 32 32.00148 15.99703 -31.99852 16.00297 -32.00148 -15.99703 31.99852 -16.00297
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+tile Dungeon_wall_bottom_slant_UL
+polygon 0 0 -28 64 -32 -4 32 -4 32 4 -32 4
+polygon -28 0 0 64 3.998517 -32.00018 4.001484 31.99981 -3.998517 32.00018 -4.001484 -31.99981
+slope 0 0 -16 32 -32 -16 32 -16 32 16 -32 16
+slope -16 0 0 32 -16 32 -16 -32 16 -32 16 32
+tile Dungeon_wall_bottom_slant_L
+slope -16 0 0 32 -15.99555 32.00222 -16.00445 -31.99777 15.99555 -32.00222 16.00445 31.99777
+polygon -28 0 0 64 -4 -32 4 -32 4 32 -4 32
+tile Dungeon_wall_bottom_slant_D
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+slope 0 0 16 32 32.00148 15.99703 -31.99852 16.00297 -32.00148 -15.99703 31.99852 -16.00297
+tile Dungeon_wall_bottom_slant_R
+polygon 28 0 0 64 -4 -32 4 -32 4 32 -4 32
+slope 16 0 0 32 15.99703 -32.00148 16.00297 31.99852 -15.99703 32.00148 -16.00297 -31.99852
+tile Dungeon_wall_bottom_slant_Inner_DR
+polygon 28 0 28 64 -4 -4 4 -4 4 4 -4 4
+slope 28 0 16 32 3.998517 16.00037 -4.001484 15.99963 -3.998517 -16.00037 4.001484 -15.99963
+cornerslope 12 0 12 24 -12 -12 12 -12 12 12
+slope 16 0 28 32 15.99907 -4.003709 16.00093 3.996291 -15.99907 4.003709 -16.00093 -3.996291
+tile Dungeon_wall_bottom_slant_outer_DL
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+polygon -28 0 0 64 -4 -32 4 -32 4 32 -4 32
+slope -16 0 0 32 -15.99555 32.00222 -16.00445 -31.99777 15.99555 -32.00222 16.00445 31.99777
+slope 0 0 16 32 31.99852 16.00297 -32.00148 15.99703 -31.99852 -16.00297 32.00148 -15.99703
+tile Dungeon_wall_bottom_slant_Inner_DL
+polygon -28 0 28 64 -4 -4 4 -4 4 4 -4 4
+slope -28 0 16 32 4.001484 15.99963 -3.998517 16.00037 -4.001484 -15.99963 3.998517 -16.00037
+cornerslope -12 0 12 24 -11.99944 12.00056 -12.00056 -11.99944 11.99944 -12.00056
+slope -16 0 28 32 -16.00019 3.999259 -15.99981 -4.000742 16.00019 -3.999259 15.99981 4.000742
+tile Dungeon_wall_bottom_slant_Inner_UL
+polygon -28 0 -28 64 -4 -4 4 -4 4 4 -4 4
+slope -28 0 -16 32 -4 -16 3.999999 -16 4 16 -3.999999 16
+slope -16 0 -28 32 -15.99944 4.002225 -16.00056 -3.997775 15.99944 -4.002225 16.00056 3.997775
+cornerslope -12 0 -12 24 12 12 -12 12 -12 -12
+tile Dungeon_wall_bottom_slant_Inner_UR
+polygon 28 0 -28 64 -4 -4 4 -4 4 4 -4 4
+slope 28 0 -16 32 -3.999999 -16 4 -16 3.999999 16 -4 16
+slope 16 0 -28 32 15.99981 -4.000741 16.00018 3.999258 -15.99981 4.000741 -16.00018 -3.999258
+cornerslope 12 0 -12 24 12 -12 12 12 -12 12
+tile Dungeon_wall_bottom_slant_BR
+polygon 28 0 0 64 -4 -32 4 -32 4 32 -4 32
+slope 16 0 0 32 15.99852 -32.00074 16.00148 31.99926 -15.99852 32.00074 -16.00148 -31.99926
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+slope 0 0 16 32 32.00148 15.99703 -31.99851 16.00296 -32.00148 -15.99703 31.99851 -16.00296
+tile Dungeon_wall_bottom_slant_cap_R
+polygon 28 0 28 64 -4 -4 4 -4 4 4 -4 4
+tile Dungeon_wall_bottom_slant_UR
+polygon 0 0 -28 64 -32 -4 32 -4 32 4 -32 4
+polygon 28 0 0 64 -4 -32 4 -32 4 32 -4 32
+slope 0 0 -16 32 -32 -16 32 -16 32 16 -32 16
+slope 16 0 0 32 15.99852 -32.00074 16.00148 31.99926 -15.99852 32.00074 -16.00148 -31.99926
+tile Dungeon_wall_mid_R
+polygon 28 0 0 64 -4 -32 4 -32 4 32 -4 32
+tile Dungeon_wall_mid_L
+polygon -28 0 0 64 -4 -32 4 -32 4 32 -4 32
+tile Dungeon_wall_mid_U
+polygon 0 0 -28 64 -32 -4 32 -4 32 4 -32 4
+tile Dungeon_wall_mid_D
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+tile Dungeon_wall_mid_UR
+polygon 0 0 -28 64 -32 -4 32 -4 32 4 -32 4
+polygon 28 0 0 64 -4 -32 4 -32 4 32 -4 32
+tile Dungeon_wall_mid_DL
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+polygon -28 0 0 64 -4 -32 4 -32 4 32 -4 32
+tile Dungeon_wall_mid_DR
+polygon 28 0 0 64 -4 -32 4 -32 4 32 -4 32
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+tile Dungeon_wall_mid_UL
+polygon -28 0 0 64 -4 -32 4 -32 4 32 -4 32
+polygon 0 0 -28 64 -32 -4 32 -4 32 4 -32 4
+tile Dungeon_wall_mid_inner_UR
+polygon 28 0 -28 64 -4 -4 4 -4 4 4 -4 4
+tile Dungeon_wall_mid_inner_UL
+polygon -28 0 -28 64 -4 -4 4 -4 4 4 -4 4
+tile Dungeon_wall_mid_inner_DR
+polygon 28 0 28 64 -4 -4 4 -4 4 4 -4 4
+tile Dungeon_wall_mid_inner_DL
+polygon -28 0 28 64 -4 -4 4 -4 4 4 -4 4
+tile window_R
+polygon 0 0 0 8 -4 -4 4 -4 4 4 -4 4
+polygon 28 0 -28 64 -4 -4 4 -4 4 4 -4 4
+polygon 28 56 0 8 -4 -32 4 -32 4 32 -4 32
+polygon 28 0 28 64 -4 -4 4 -4 4 4 -4 4
+polygon 28 0 0 8 -4 -32 4 -32 4 32 -4 32
+polygon 20 0 36 64 -4 -4 4 -4 4 4 -4 4
+polygon 20 0 74 64 -4 -4 4 -4 4 4 -4 4
+polygon 20 56 56 8 -4 -16 4 -16 4 16 -4 16
+polygon 20 0 54 8 -4 -16 4 -16 4 16 -4 16
+tile TEST
+polygon 0 0 0 1 -1.639128E-05 -0.7071068 0.7071068 -1.639128E-05 1.639128E-05 0.7071068 -0.7071068 1.639128E-05
+polygon 0 0 0 1 -0.5 -0.5 0.5 -0.5 0.5 0.5 -0.5 0.5
+polygon 0 0 0 64 -32 -32 32 -32 32 32 -32 32
+polygon 0 0 0 64 -0.001049042 -45.25483 45.25483 -0.001049042 0.001049042 45.25483 -45.25483 0.001049042
+polygon 0 4 0 64 -0.001049534 -45.25483 45.25483 -0.001049534 0.001049534 45.25483 -45.25483 0.001049534
+polygon 0 16 0 32 -16 -16 16 -16 16 16 -16 16
+polygon 8 0 0 32 -8 -32 8 -32 8 32 -8 32
+polygon 0 0 -2 4 -1 -3 1 -3 1 3 -1 3
+tile Dungeon_wall_upper_R
+polygon 28 0 0 64 -4 -32 4 -32 4 32 -4 32
+slope 16 32 0 64 -16 32 -16 -32 16 -32 16 32
+doublesided
+tile Dungeon_wall_upper_L
+polygon -28 0 0 64 -4 -32 4 -32 4 32 -4 32
+slope -16 32 0 64 16 -32 16 32 -16 32 -16 -32
+cap
+doublesided
+tile Dungeon_wall_upper_U
+polygon 0 0 -28 64 -32 -4 32 -4 32 4 -32 4
+slope 0 32 -16 64 32.00148 15.99703 -31.99852 16.00297 -32.00148 -15.99703 31.99852 -16.00297
+cap
+doublesided
+tile Dungeon_wall_upper_D
+polygon 0 0 28 64 -32 -4 32 -4 32 4 -32 4
+slope 0 32 16 64 -32 -16 32 -16 32 16 -32 16
+cap
+doublesided
+tile ground_16_flat
+polygon 0 0 0 16 -32 -32 32 -32 32 32 -32 32
+tile ground_16_slope_D
+slope 0 0 0 16 -32 -32 32 -32 32 32 -32 32
+tile ground_16_slope_U
+slope 0 0 0 16 32.00297 31.99703 -31.99703 32.00297 -32.00297 -31.99703 31.99703 -32.00297
+tile ground_16_slope_L
+slope 0 0 0 16 31.99703 -32.00297 32.00297 31.99703 -31.99703 32.00297 -32.00297 -31.99703
+tile ground_16_slope_R
+slope 0 0 0 16 -31.99703 32.00297 -32.00297 -31.99703 31.99703 -32.00297 32.00297 31.99703
+tile ground_16_slope_DL
+cornerslope 0 0 0 16 32.00148 -31.99852 31.99852 32.00148 -32.00148 31.99852
+tile ground_16_slope_DR
+cornerslope 0 0 0 16 32 32 -32 32 -32 -32
+tile ground_16_slope_UL
+cornerslope 0 0 0 16 -31.99703 -32.00297 32.00297 -31.99703 31.99703 32.00297
+tile ground_16_slope_UR
+cornerslope 0 0 0 16 -31.99852 32.00148 -32.00148 -31.99852 31.99852 -32.00148
+tile ground_32_flat
+polygon 0 0 0 32 -32 -32 32 -32 32 32 -32 32
+tile ground_32_slope_D
+slope 0 0 0 32 -32 -32 32 -32 32 32 -32 32
+tile ground_32_slope_U
+slope 0 0 0 32 32.00297 31.99703 -31.99703 32.00297 -32.00297 -31.99703 31.99703 -32.00297
+tile ground_32_slope_L
+slope 0 0 0 32 31.99703 -32.00297 32.00297 31.99703 -31.99703 32.00297 -32.00297 -31.99703
+tile ground_32_slope_R
+slope 0 0 0 32 -31.99703 32.00297 -32.00297 -31.99703 31.99703 -32.00297 32.00297 31.99703
+tile ground_32_slope_DL
+cornerslope 0 0 0 32 32 -32 32 32 -32 32
+tile ground_32_slope_DR
+cornerslope 0 0 0 32 32 32 -32 32 -32 -32
+tile ground_32_slope_UL
+cornerslope 0 0 0 32 -32 -32 32 -32 32 32
+tile ground_32_slope_UR
+cornerslope 0 0 0 32 -32 32 -32 -32 32 -32

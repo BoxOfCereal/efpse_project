@@ -1,0 +1,5 @@
+Yes, exactly. The line of sight represents the direction in which the camera is facing. In a 3D environment, it's often represented as a vector starting from the camera's position and extending outward in the direction the camera is pointed.
+
+So, if you have the coordinates of the camera and you calculate the line of sight using trigonometric calculations based on the camera's rotation angles, the resulting point represents where the camera is facing or what it's looking at in the scene. It's essentially the point in 3D space that the camera's lens is pointed towards.
+
+Somewhat continuous rock paper scissors where you try to predict the Distribution that will defeat the opponent but in this case it'll only be three numbers so it'll be like a triangle and you have to predict the distribution that will defeat the opponents distribution.

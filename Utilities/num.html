@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Image Generator</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Digit Image Generator</h2>
+    <label for="font">Choose a font:</label>
+    <select id="font">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Custom">Custom Font</option>
+    </select>
+    <input type="file" id="customFont" accept=".ttf,.otf,.woff,.woff2">
+    <label for="fontSize">Font Size:</label>
+    <input type="number" id="fontSize" min="1" max="100" value="20">
+    <button onclick="generateImage()">Generate Image</button>
+    <br>
+    <canvas id="digitCanvas"></canvas>
+
+    <script>
+        function generateImage() {
+            const canvas = document.getElementById("digitCanvas");
+            const ctx = canvas.getContext("2d");
+            const fontSelector = document.getElementById("font");
+            const font = fontSelector.value;
+            const fontSize = parseInt(document.getElementById("fontSize").value);
+            const boxSize = fontSize + 8; // Adding extra padding for each character
+            let x_offset = 0;
+            let y_offset = 50;
+            // Calculate canvas width based on number of characters
+            const digits = "0123456789%";
+            const canvasWidth = digits.length * boxSize;
+            canvas.width = canvasWidth;
+            canvas.height = boxSize + 8;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (font === "Custom") {
+                const customFontFile = document.getElementById("customFont").files[0];
+                if (!customFontFile) {
+                    alert("Please select a font file.");
+                    return;
+                }
+                const customFontUrl = URL.createObjectURL(customFontFile);
+                const customFont = new FontFace("Custom", `url(${customFontUrl})`);
+                customFont.load().then((loadedFont) => {
+                    document.fonts.add(loadedFont);
+                    ctx.font = `${fontSize}px Custom`;
+                    drawDigits(ctx, fontSize, boxSize);
+                }).catch((error) => {
+                    console.error("Error loading custom font:", error);
+                    alert("Error loading custom font. Please try again with a valid font file.");
+                });
+            } else {
+                ctx.font = `${fontSize}px ${font}`;
+                drawDigits(ctx, fontSize, boxSize);
+            }
+        }
+
+        function drawDigits(ctx, fontSize, boxSize) {
+            const digits = "0123456789%";
+            const digitWidth = ctx.measureText("0").width;
+
+            for (let i = 0; i < digits.length; i++) {
+                const x = (i + 0.5) * boxSize - digitWidth / 2; // Center each character in the box
+                const y = fontSize / 2; // Center vertically
+                ctx.fillText(digits[i], x + x_offset, y + y_offset); // Adjusting for font baseline
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1101 @@
+; FBX 7.3.0 project file
+; Created by the Blockbench FBX Exporter
+; ----------------------------------------------------
+; 
+
+FBXHeaderExtension:  {
+	FBXHeaderVersion: 1003
+	FBXVersion: 7300
+	EncryptionType: 0
+	CreationTimeStamp:  {
+		Version: 1000
+		Year: 2024
+		Month: 4
+		Day: 5
+		Hour: 14
+		Minute: 9
+		Second: 36
+		Millisecond: 21
+	}
+	Creator: "Blockbench 4.9.4"
+	OtherFlags:  {
+		FlagPLE: 0
+	}
+	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
+		Type: "UserData"
+		Version: 100
+		MetaData:  {
+			Version: 100
+			Title: ""
+			Subject: ""
+			Author: ""
+			Keywords: ""
+			Revision: ""
+			Comment: ""
+		}
+		Properties70:  {
+			P: "DocumentUrl", "KString", "Url", "", "C:\Users\Blockbench\foobar.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\Blockbench\foobar.fbx"
+			P: "Original", "Compound", "", ""
+			P: "Original|ApplicationVendor", "KString", "", "", "Blockbench"
+			P: "Original|ApplicationName", "KString", "", "", "Blockbench FBX Exporter"
+			P: "Original|ApplicationVersion", "KString", "", "", "4.9.4"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "01/01/1970 00:00:00.000"
+			P: "Original|FileName", "KString", "", "", "/foobar.fbx"
+			P: "LastSaved", "Compound", "", ""
+			P: "LastSaved|ApplicationVendor", "KString", "", "", "Blockbench"
+			P: "LastSaved|ApplicationName", "KString", "", "", "Blockbench FBX Exporter"
+			P: "LastSaved|ApplicationVersion", "KString", "", "", "4.9.4"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "01/01/1970 00:00:00.000"
+			P: "Original|ApplicationNativeFile", "KString", "", "", ""
+		}
+	}
+}
+CreationTime: "2024-04-05 18:09:36:021"
+Creator: "Made with Blockbench"
+GlobalSettings:  {
+	Version: 1000
+	Properties60:  {
+		P: "UpAxis", "int", "Integer", "",1
+		P: "UpAxisSign", "int", "Integer", "",1
+		P: "FrontAxis", "int", "Integer", "",2
+		P: "FrontAxisSign", "int", "Integer", "",1
+		P: "CoordAxis", "int", "Integer", "",0
+		P: "CoordAxisSign", "int", "Integer", "",1
+		P: "OriginalUpAxis", "int", "Integer", "",-1
+		P: "OriginalUpAxisSign", "int", "Integer", "",1
+		P: "UnitScaleFactor", "double", "Number", "",1
+		P: "OriginalUnitScaleFactor", "double", "Number", "",1
+		P: "AmbientColor", "ColorRGB", "Color", "",0,0,0
+		P: "DefaultCamera", "KString", "", "", "Producer Perspective"
+		P: "TimeMode", "enum", "", "",0
+		P: "TimeSpanStart", "KTime", "Time", "",0
+		P: "TimeSpanStop", "KTime", "Time", "",46186158000
+		P: "CustomFrameRate", "double", "Number", "",24
+	}
+}
+
+; Object definitions
+;------------------------------------------------------------------
+
+Definitions:  {
+	Version: 100
+	Count: 50
+	ObjectType: "GlobalSettings" {
+		Count: 1
+	}
+	ObjectType: "Model" {
+		Count: 5
+		PropertyTemplate: "FbxNode" {
+			Properties70:  {
+				P: "QuaternionInterpolate", "enum", "", "",0
+				P: "RotationOffset", "Vector3D", "Vector", "",0,0,0
+				P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+				P: "ScalingOffset", "Vector3D", "Vector", "",0,0,0
+				P: "ScalingPivot", "Vector3D", "Vector", "",0,0,0
+				P: "TranslationActive", "bool", "", "",0
+				P: "TranslationMin", "Vector3D", "Vector", "",0,0,0
+				P: "TranslationMax", "Vector3D", "Vector", "",0,0,0
+				P: "TranslationMinX", "bool", "", "",0
+				P: "TranslationMinY", "bool", "", "",0
+				P: "TranslationMinZ", "bool", "", "",0
+				P: "TranslationMaxX", "bool", "", "",0
+				P: "TranslationMaxY", "bool", "", "",0
+				P: "TranslationMaxZ", "bool", "", "",0
+				P: "RotationOrder", "enum", "", "",5
+				P: "RotationSpaceForLimitOnly", "bool", "", "",0
+				P: "RotationStiffnessX", "double", "Number", "",0
+				P: "RotationStiffnessY", "double", "Number", "",0
+				P: "RotationStiffnessZ", "double", "Number", "",0
+				P: "AxisLen", "double", "Number", "",10
+				P: "PreRotation", "Vector3D", "Vector", "",0,0,0
+				P: "PostRotation", "Vector3D", "Vector", "",0,0,0
+				P: "RotationActive", "bool", "", "",0
+				P: "RotationMin", "Vector3D", "Vector", "",0,0,0
+				P: "RotationMax", "Vector3D", "Vector", "",0,0,0
+				P: "RotationMinX", "bool", "", "",0
+				P: "RotationMinY", "bool", "", "",0
+				P: "RotationMinZ", "bool", "", "",0
+				P: "RotationMaxX", "bool", "", "",0
+				P: "RotationMaxY", "bool", "", "",0
+				P: "RotationMaxZ", "bool", "", "",0
+				P: "InheritType", "enum", "", "",0
+				P: "ScalingActive", "bool", "", "",0
+				P: "ScalingMin", "Vector3D", "Vector", "",0,0,0
+				P: "ScalingMax", "Vector3D", "Vector", "",1,1,1
+				P: "ScalingMinX", "bool", "", "",0
+				P: "ScalingMinY", "bool", "", "",0
+				P: "ScalingMinZ", "bool", "", "",0
+				P: "ScalingMaxX", "bool", "", "",0
+				P: "ScalingMaxY", "bool", "", "",0
+				P: "ScalingMaxZ", "bool", "", "",0
+				P: "GeometricTranslation", "Vector3D", "Vector", "",0,0,0
+				P: "GeometricRotation", "Vector3D", "Vector", "",0,0,0
+				P: "GeometricScaling", "Vector3D", "Vector", "",1,1,1
+				P: "MinDampRangeX", "double", "Number", "",0
+				P: "MinDampRangeY", "double", "Number", "",0
+				P: "MinDampRangeZ", "double", "Number", "",0
+				P: "MaxDampRangeX", "double", "Number", "",0
+				P: "MaxDampRangeY", "double", "Number", "",0
+				P: "MaxDampRangeZ", "double", "Number", "",0
+				P: "MinDampStrengthX", "double", "Number", "",0
+				P: "MinDampStrengthY", "double", "Number", "",0
+				P: "MinDampStrengthZ", "double", "Number", "",0
+				P: "MaxDampStrengthX", "double", "Number", "",0
+				P: "MaxDampStrengthY", "double", "Number", "",0
+				P: "MaxDampStrengthZ", "double", "Number", "",0
+				P: "PreferedAngleX", "double", "Number", "",0
+				P: "PreferedAngleY", "double", "Number", "",0
+				P: "PreferedAngleZ", "double", "Number", "",0
+				P: "LookAtProperty", "object", "", ""
+				P: "UpVectorProperty", "object", "", ""
+				P: "Show", "bool", "", "",1
+				P: "NegativePercentShapeSupport", "bool", "", "",1
+				P: "DefaultAttributeIndex", "int", "Integer", "",-1
+				P: "Freeze", "bool", "", "",0
+				P: "LODBox", "bool", "", "",0
+				P: "Lcl Translation", "Lcl Translation", "", "A",0,0,0
+				P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+				P: "Lcl Scaling", "Lcl Scaling", "", "A",1,1,1
+				P: "Visibility", "Visibility", "", "A",1
+				P: "Visibility Inheritance", "Visibility Inheritance", "", "",1
+			}
+		}
+	}
+	ObjectType: "Geometry" {
+		Count: 4
+		PropertyTemplate: "FbxMesh" {
+			Properties70:  {
+				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
+				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
+				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
+				P: "Primary Visibility", "bool", "", "",1
+				P: "Casts Shadows", "bool", "", "",1
+				P: "Receive Shadows", "bool", "", "",1
+			}
+		}
+	}
+	ObjectType: "Material" {
+		Count: 10
+		PropertyTemplate: "FbxSurfaceLambert" {
+			Properties70:  {
+				P: "ShadingModel", "KString", "", "", "Lambert"
+				P: "MultiLayer", "bool", "", "",0
+				P: "EmissiveColor", "Color", "", "A",0,0,0
+				P: "EmissiveFactor", "Number", "", "A",1
+				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
+				P: "AmbientFactor", "Number", "", "A",1
+				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
+				P: "DiffuseFactor", "Number", "", "A",1
+				P: "Bump", "Vector3D", "Vector", "",0,0,0
+				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
+				P: "BumpFactor", "double", "Number", "",1
+				P: "TransparentColor", "Color", "", "A",0,0,0
+				P: "TransparencyFactor", "Number", "", "A",0
+				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "DisplacementFactor", "double", "Number", "",1
+				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "VectorDisplacementFactor", "double", "Number", "",1
+			}
+		}
+	}
+	ObjectType: "Texture" {
+		Count: 10
+		PropertyTemplate: "FbxFileTexture" {
+			Properties70:  {
+				P: "TextureTypeUse", "enum", "", "",0
+				P: "Texture alpha", "Number", "", "A",1
+				P: "CurrentMappingType", "enum", "", "",0
+				P: "WrapModeU", "enum", "", "",0
+				P: "WrapModeV", "enum", "", "",0
+				P: "UVSwap", "bool", "", "",0
+				P: "PremultiplyAlpha", "bool", "", "",1
+				P: "Translation", "Vector", "", "A",0,0,0
+				P: "Rotation", "Vector", "", "A",0,0,0
+				P: "Scaling", "Vector", "", "A",1,1,1
+				P: "TextureRotationPivot", "Vector3D", "Vector", "",0,0,0
+				P: "TextureScalingPivot", "Vector3D", "Vector", "",0,0,0
+				P: "CurrentTextureBlendMode", "enum", "", "",1
+				P: "UVSet", "KString", "", "", "default"
+				P: "UseMaterial", "bool", "", "",0
+				P: "UseMipMap", "bool", "", "",0
+			}
+		}
+	}
+	ObjectType: "Video" {
+		Count: 10
+		PropertyTemplate: "FbxVideo" {
+			Properties70:  {
+				P: "ImageSequence", "bool", "", "",0
+				P: "ImageSequenceOffset", "int", "Integer", "",0
+				P: "FrameRate", "double", "Number", "",0
+				P: "LastFrame", "int", "Integer", "",0
+				P: "Width", "int", "Integer", "",0
+				P: "Height", "int", "Integer", "",0
+				P: "Path", "KString", "XRefUrl", "", ""
+				P: "StartFrame", "int", "Integer", "",0
+				P: "StopFrame", "int", "Integer", "",0
+				P: "PlaySpeed", "double", "Number", "",0
+				P: "Offset", "KTime", "Time", "",0
+				P: "InterlaceMode", "enum", "", "",0
+				P: "FreeRunning", "bool", "", "",0
+				P: "Loop", "bool", "", "",0
+				P: "AccessMode", "enum", "", "",0
+			}
+		}
+	}
+	ObjectType: "AnimationStack" {
+		Count: 1
+		PropertyTemplate: "FbxAnimStack" {
+			Properties70:  {
+				P: "Description", "KString", "", "", ""
+				P: "LocalStart", "KTime", "Time", "",0
+				P: "LocalStop", "KTime", "Time", "",0
+				P: "ReferenceStart", "KTime", "Time", "",0
+				P: "ReferenceStop", "KTime", "Time", "",0
+			}
+		}
+	}
+	ObjectType: "AnimationLayer" {
+		Count: 1
+		PropertyTemplate: "FbxAnimLayer" {
+			Properties70:  {
+				P: "Weight", "Number", "", "A",100
+				P: "Mute", "bool", "", "",0
+				P: "Solo", "bool", "", "",0
+				P: "Lock", "bool", "", "",0
+				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
+				P: "BlendMode", "enum", "", "",0
+				P: "RotationAccumulationMode", "enum", "", "",0
+				P: "ScaleAccumulationMode", "enum", "", "",0
+				P: "BlendModeBypass", "ULongLong", "", "",0
+			}
+		}
+	}
+	ObjectType: "AnimationCurveNode" {
+		Count: 2
+		PropertyTemplate: "FbxAnimCurveNode" {
+			Properties70:  {
+				P: "d", "Compound", "", ""
+			}
+		}
+	}
+	ObjectType: "AnimationCurve" {
+		Count: 6
+	}
+}
+
+; Object properties
+;------------------------------------------------------------------
+
+Objects:  {
+	Geometry: 15332599, "Geometry::cube_1", "Mesh" {
+		Vertices: *24 {
+			a: 25,6.25,6.25,25,6.25,0,25,0,6.25,25,0,0,-25,6.25,0,-25,6.25,6.25,-25,0,0,-25,0,6.25
+		}
+		PolygonVertexIndex: *24 {
+			a: 3,6,4,-2,2,3,1,-1,7,2,0,-6,6,7,5,-5,5,0,1,-5,6,3,2,-8
+		}
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygon"
+			ReferenceInformationType: "Direct"
+			Normals: *18 {
+				a: 0,0,-1,1,0,0,0,0,1,-1,0,0,0,1,0,0,-1,0
+			}
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			UV: *48 {
+				a: 0.59375,0.78125,1,0.78125,1,0.84375,0.59375,0.84375,0,0.9375,0.0625,0.9375,0.0625,1,0,1,0.59375,0.78125,1,0.78125,1,0.84375,0.59375,0.84375,0,0.9375,0.0625,0.9375,0.0625,1,0,1,0.59375,0.78125,1,0.78125,1,0.84375,0.59375,0.84375,0.59375,0.78125,1,0.78125,1,0.84375,0.59375,0.84375
+			}
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: *1 {
+				a: 0
+			}
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+		}
+	}
+	Geometry: 36916348, "Geometry::hilt", "Mesh" {
+		Vertices: *24 {
+			a: 12.5,12.5,12.5,12.5,12.5,-12.5,12.5,0,12.5,12.5,0,-12.5,-12.5,12.5,-12.5,-12.5,12.5,12.5,-12.5,0,-12.5,-12.5,0,12.5
+		}
+		PolygonVertexIndex: *24 {
+			a: 3,6,4,-2,2,3,1,-1,7,2,0,-6,6,7,5,-5,5,0,1,-5,6,3,2,-8
+		}
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygon"
+			ReferenceInformationType: "Direct"
+			Normals: *18 {
+				a: 0,0,-1,1,0,0,0,0,1,-1,0,0,0,1,0,0,-1,0
+			}
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			UV: *48 {
+				a: 0,0.1875,1,0.1875,1,0.8125,0,0.8125,0,0.875,0.25,0.875,0.25,1,0,1,0,0.875,0.25,0.875,0.25,1,0,1,0,0.875,0.25,0.875,0.25,1,0,1,0,0,1,0,1,1,0,1,0.375,0.375,0.625,0.375,0.625,0.625,0.375,0.625
+			}
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygon"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: *6 {
+				a: 0,2,2,2,1,1
+			}
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+		}
+	}
+	Geometry: 73850812, "Geometry::blade", "Mesh" {
+		Vertices: *36 {
+			a: 6.25,100,6.25,6.25,100,-6.25,6.25,0,6.25,6.25,0,-6.25,-6.25,100,6.25,-6.25,100,-6.25,-6.25,0,6.25,-6.25,0,-6.25,12.5,112.5,0,-12.5,112.5,0,-12.5,0,0,12.5,0,0
+		}
+		PolygonVertexIndex: *40 {
+			a: 1,8,11,-4,7,10,9,-6,3,11,10,-8,2,0,4,-7,7,5,1,-4,5,9,8,-2,0,8,9,-5,4,9,10,-7,6,10,11,-3,2,11,8,-1
+		}
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygon"
+			ReferenceInformationType: "Direct"
+			Normals: *30 {
+				a: 0.7071067811865476,0,-0.7071067811865476,-0.7071067811865476,0,-0.7071067811865476,0,-1,0,0,0,1,0,0,-1,0,0.4472135954999579,-0.8944271909999159,0,0.4472135954999579,0.8944271909999159,-0.7071067811865476,0,0.7071067811865476,0,-1,0,0.7071067811865476,0,0.7071067811865476
+			}
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			UV: *80 {
+				a: 0.09375,0.96875,0,1,0.03125,0,0.125,0,0.28125,0,0.34375,0,0.375,1,0.28125,1,0.125,0.875,0.125,0.9375,0,0.9375,0,0.875,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,0,1,0,0.9375,0.125,0.9375,0.125,1,0.125,0.875,0.125,0.9375,0,0.9375,0,0.875,0.125,1,0.0625,1,0.0625,0,0.125,0,0,1,0,0.9375,0.125,0.9375,0.125,1,0,0,0.0625,0,0.0625,1,0,1
+			}
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygon"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: *10 {
+				a: 1,1,-1,0,0,1,1,1,-1,1
+			}
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+		}
+	}
+	Geometry: 88918540, "Geometry::cube", "Mesh" {
+		Vertices: *24 {
+			a: 6.25,43.75,6.25,6.25,43.75,0,6.25,0,6.25,6.25,0,0,-6.25,43.75,0,-6.25,43.75,6.25,-6.25,0,0,-6.25,0,6.25
+		}
+		PolygonVertexIndex: *24 {
+			a: 3,6,4,-2,2,3,1,-1,7,2,0,-6,6,7,5,-5,5,0,1,-5,6,3,2,-8
+		}
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygon"
+			ReferenceInformationType: "Direct"
+			Normals: *18 {
+				a: 0,0,-1,1,0,0,0,0,1,-1,0,0,0,1,0,0,-1,0
+			}
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			UV: *48 {
+				a: 0,0.5625,0.125,0.5625,0.125,1,0,1,0,0.5625,0.0625,0.5625,0.0625,1,0,1,0,0.5625,0.125,0.5625,0.125,1,0,1,0,0.5625,0.0625,0.5625,0.0625,1,0,1,0,0.9375,0.125,0.9375,0.125,1,0,1,0,0.9375,0.125,0.9375,0.125,1,0,1
+			}
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: *1 {
+				a: 0
+			}
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+		}
+	}
+	Model: 59213125, "Model::sword", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,37.5,0
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",90,0,0
+			P: "RotationOrder", "enum", "", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 81719727, "Model::blade", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-6.25,0
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",5
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 39992276, "Model::hilt", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-6.25,0
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 91066448, "Model::cube", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-37.5,-3.125
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 80162628, "Model::cube_1", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-3.125,-3.125
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Material: 38103521, "Material::bars_red_4.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 13911599, "Texture::bars_red_4.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::bars_red_4.png"
+		Media: "Video::bars_red_4.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\wall\bars_red_4.png"
+		RelativeFilename: "bars_red_4.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 16208603, "Video::bars_red_4.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\wall\bars_red_4.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\wall\bars_red_4.png"
+		RelativeFilename: "bars_red_4.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABFtJREFUWEeFV81LVFEUv+OIoygNIU5+jRIyoDAt3IjQf9DOsE20aOdGNGhhm1YtQigocNHSRUtpE7RsEQUihIt0NWiZH2OKxIyKjjpO/I7+bued7su7ue+9e77u+fid8xJPenpq6eZmdz2ZdFi/q1XZS4eH7sHQkDy/XVhwoOECLenwTfPi+Ue5LKSWX9NB/s/jY5d4PjBQ+7a3Jww9jY3ykfvjXE6+P1pactlUyn+3tHgnH5+xg79ydOSmVlbc7XTaXwC065WKvCfe5PM1Woxbwphbra2yTw0OurODA/eyUBBifreGUjK/QzgMHu/uds1tbW56cTFiPM8/l8t/DaCL6RoIu5fNuvqWFjc+Py83gOWhRcU80wbgGzwAg7B4hn2tUrkIAZTy9nTvl1LJTff1CdPMxoa/fZwXYAR4sKAMCmaGh92vYtHNbm9HQqyNkBB82tnxLuIhOODCVFOT5AA8ACO1hxhLKtTK8fy0t9e11Nf7HKAHGX/vASahtgwCJrNZsfz1+nokBDbWlo+h0PyhEEgSLo2O1irFomQrFpLmcHfXbZ2cuOzIiPs4N+dyyaS7mU67vf19d6OjQ9xaPj+PnF+rq5PbHpydCU1hczNynuvqEvmQjQW6r6enFwaUV1dFMTKe63up5ArVqlTD3UzGdTY0CA2UQxEM1OdQAOEQHDqngZQBPWIAgEjXpY6jdqGNr447z5jloRDwm+XzVaABiDFGEuJGz9bWfBnhjMtWjj+4BKaH7e0+CZkDumSRO0EgIhGACG5FGVrFqAarEO86QVEFyAcCEc51JUgVsAwpTFtIJNNAZEGHSsmvwQoXQM7Qg/b2kTIMwWtcCKiEXgm9w73EAXjQeoe5EGlG1gvIfqx3l0ClXWiV63AQF8hvcYTJGgkBBWq0mxwbExz4sLXluyGNAH0oCQnHoHsxMeH5dS/5B4rRDa0bIYAKyKATMRRzG+M7nZ2CI5o/mIRsxzxkw7Eh0D3f9gVtELHeQnEIwiPNiELpZs4DbEYhrKBi2w84DwBH0A1DSS44wHashVOo7YY6CUNla40gDoTmCT8PEIptUoHgVT4vA4kFEn0bCy66GjAPAMg4kDA0oIGHZCLiTBiKjxagZzqbgFowhWMHFBMJbahYitKMeIv/zQNxWK5vTOUhHCDw6GYkOKDbMdzFtox2rOcBtFMs3Cg0L6BdcxbgvNDf3+/eLy/LPGHnBdD4eQADCWLNeQDDie33V80DPOdMgIFFzwswgMbjIn4gCc0DdKudB6yLGXs7EzK+FgdsiIPNCMxx80Co+WgE1SgHo9jO9Viuk933AiChxXUIYzsNAQnLVk/JNpmvauf+x4RjuYZXtlPEDUDCKqCHSGvRU7uZZWzbMUOEXXAAD/Ym/DHhSMZupsOgm5P9R4DBdiTTxnkgIg4w8aCYScU/o9DPZVwP0IkKfl4gLoET9zOZmv5T6U2l5J8NO9opFuYBLp7hnc96J53lj6P9A0D19h1Xs/EKAAAAAElFTkSuQmCC"
+	}
+	Material: 62046583, "Material::sigil_rhombus.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 83612949, "Texture::sigil_rhombus.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::sigil_rhombus.png"
+		Media: "Video::sigil_rhombus.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_rhombus.png"
+		RelativeFilename: "sigil_rhombus.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 96218052, "Video::sigil_rhombus.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_rhombus.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_rhombus.png"
+		RelativeFilename: "sigil_rhombus.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA/hJREFUWEedlzFrVFEQhW/icw3rZjGJqBiw1M7Kysb8AQuxsLCwtBMELRRC0IAWCoKdP8FCLPwBiY2VlZ0/wEIhRsy6rOszkXPd73Le5K2oF0Levr135szMmTN3Z073envpH9ehqkrf6zo9ezXIJ29cOpI//8+aAcDy4mL6WdfpQFWV/6PRKB2sqvSjrtPWcFjsC8DTl1/SysqT/G5z82YGcbTfL3vcll5+G43SznicTvT72YeW7GcAeiknY/3t7qbO7GzeoGeWIpzvdLIRRS7nZ+ZX89fvd9YziPvXTmWjAs2S3WyrrvNZ2Tg8N5f9Dcbj3wAU/dfBIHUmBwHizj3tcn7++MNsQEvgAHH3yrHsTLbIHs61d6nbLecUaAEg5NrokcuwHOOEyM8trefseN0V2dut1ZyJW5cXSzAevZ6xR5YbHACEUuWOddCdAxKAAIkgyKDs4bzX6ZSS6KEAoL6leBO0sF1pV+Rt3OCMQCsyMqFyaInAlFB+sFFKwJf6L4SqLVE54cgKJXHH7GfPu+21Uo5YLi9FyYDIETlAq8H2WBYAeFQKgIjbQBAsIPYBoA0fv/icW+3swr0/ioycc0bMjx0EiOsXe6UMOFfWMgBSTwZwrsgj4rb0kwnVFO3wkngmIDjfFwAcJu2RcG4wsh/yKQOuDc4Rz4TKrVWEiJS484jUMxE7xbMSieq8Qawk2wRcOBDl1evkDqc9u+MISBmT3Gu9/nC7zI7Shjh3wsWIp2WgTT8ieO8wlenNxzsFxMzGRtqbxnbXBxkVYg2S7eEwd8bfgmLYZQGayD1ELwDodVLFCHYFk3ONVZQsEtMjd3A+bXMgVZUePP+U2zxzAHKsXT2ZxyQMJUoil3Mf0dQ6tmoE5iXQGaJXp2UAPkTQb9KFQ1gbhwki5P1PWyLBrjPuXD4aFxLIwUzXBm9HDJNGVz0BZK9A+h2AzokTdR8AXSBoE810ah3bSs788uKc8AuH3yfQGF1kHHjJgIyoxt4m0m9WbDcGUFQ/H0wAd42J178MIPapJBLppBxR4xlCAIzjmPeurnDCs1RIqPrF9NEdlMNvNtNaEC4IgAtcHFQoZ5HiqF60lut3m8Ryzkmod0QudV3odhu3br9LNgCQttjXlENDxEHE/UTlzrWHW1Yh1OSh3AfcUHQQr1gQM8ownIi3KL2HqGiIj+ySAcQiCpCni3IAAqe0G84vLD9q/JoiCJXC1bRxI9IHuoGrlfd3zIR3h9+cca6zXG59VKMhfNfgAOlq+4Eig3yPYqo71FrTau5C5Ol3TjRKkCU2/C70sUskMgAInfHfiXQFXPK5ANfcR2sXtHVDJKo+qzu01Gpt3eFgSD3Zpby/AInWRE3DxG+oAAAAAElFTkSuQmCC"
+	}
+	Material: 22053167, "Material::sigil_circle.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 87076877, "Texture::sigil_circle.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::sigil_circle.png"
+		Media: "Video::sigil_circle.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_circle.png"
+		RelativeFilename: "sigil_circle.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 28228792, "Video::sigil_circle.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_circle.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_circle.png"
+		RelativeFilename: "sigil_circle.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA9NJREFUWEfFl71qVFEUhW/GcRzGZDCJoGCvnZWVla8gvocg2IqIoI0g2PkIFmLhC+QZfAcb0UTiOMQ4RvkO8x3WPTOjpae5956/vfbav3fr+vb27+4/ji0BXNvb634tFt254bD7fHzc7U4mFdbPxaKbnZ6W78vTadnHHGM8HncnJyfd6WLRfVvu2RmNuovjcVln3/nhsNz78fCw259MyrdrBcDV6bRemGRwKYPLviPk7KwAUOBoOCzARoNB2YOwL/N5532czz0ABBxzDM4WAGh/PJvVBQ8Khu9Nwt0DCPb8WIJOEM47J5uc6QHgMtEJQhYEINCcL+cGg2ICKGbABNpybns0qswczedlnf2MagIW2Ki2bpDCPMSlDjXmW/tqrlxj/cJwWGQwVKA6oYsuaK+yeakFzoOdU3uEQK0D4Z7hqfbcz15Ycb2agEkEsiltmfNEhZfDChQzWodL7QCuaSrC5QuyqgkULAiQModQPRt6FcrB1+9n9c77dy/17OpCOmWrnCapJpBG47alUnsq+M6dlxXAwcGD8g6Q9KOMCNb1jfSfAgDttCv0tu9SjnAF39x9Us314ehxuRMgD+/tFZ9h6B8mMh07malRoMaiE4jPF28Pi/AbO4+K3VMbL3bPrf2nPZ9Kk7TRtTYR1QPLpOLFaC2tyVqG5at3X3tACW8d24yZcysmQPjftDec2CcIvZ3nvwB4vyl8pRZof1lI7cvhSLmGklFjyOkrt688L/6kQuYTQ5XvtQyYKHiqEXZN5zKM2mwHK8/efKpmaOPf9KwiBYCaZHj4rjY436aR5RfnlDUYIHckUwKXzQIgS6RFJGuALHAhtmu1JiosMrnXHqGNGs8DrAfATJflmTlZMPY1UdYBa0T6TFbI9K00ZTWBqBBOw5GOQnbTrvoC+40CS7h7YMrzpPdkwDygOWsqZsKNaWtDDCEKYD0TElozSFTrnLUN13TyXk+YrVaGT6ZnhSVI0zPCHfaHbZlXeC8KbEgtRNrTXjCTkxXT/M+a8Z4JiXnrf/aUaYKaB7Kmp2ZtYTJ7tWXbM5nns18gNPOuFRPo9WqqA/lNJ5TleVOr1YZotmiClCW+UaRXDVuNe864WPTacyl2Tyab7C3WNbcmoQpABuzt2/+BLE7+VGxqPNeZcxP9MNkrRus83wICvbRoltIsMNnCZV+RLX7roDK4AiA9PoVkTW9DaR2ATVpzj2m+MmASMvxEns7YapDtldroB22ose7/AEzy7t/RSiZMEPmLlgdb4W3rva5PyK4pz/cA6NH58+BcVrCM+01/SW10SH1blP4AxqxqtBWxJ7UAAAAASUVORK5CYII="
+	}
+	Material: 81840656, "Material::sigil_cross.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 89378478, "Texture::sigil_cross.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::sigil_cross.png"
+		Media: "Video::sigil_cross.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_cross.png"
+		RelativeFilename: "sigil_cross.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 6797883, "Video::sigil_cross.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_cross.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_cross.png"
+		RelativeFilename: "sigil_cross.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA5VJREFUWEell71uE1EQhddhMZFxosQpQEoPFTRQ0ZBX4gFAQkhQgBSJjpKSAlHwAMmzUCL+ZExkNlYWnRt/q3PHd4MD23h/7p05c+bM3PHg1njcXqvrStfvxSL9rnu9+TirDg4Oq9tbj7Mt2POXfbYHd3Z22uHGRlrbnJ0lEDe3t6srdV3N5/Pqal1391rDs+6fvP1UBIBjAYm2t4bDans8Tktkf3BvMmnlGAb2J5P0oVmDjVfvvyUAD268qL6enCQb2o9xgPBNzwJwfXOzOl0sqlnTnAP42TRZ1Dgf1nUHJN7L2PN3nzMAJfCwqvViFsd6FjspBaJdm6ezWQItZ/EqgYIBNLA3GmXM4VzvxYIAfF8yRWoGEiHI5MQjBUxfOiIAzz0p9UCkifFweK63ZYoTgIi8zzHMaLOie/3hRydCGReT/MqG7OpS9LyXBhB8SoEAxNxFFkqAHMDd3aeZc2cUZ7EMKdWMARx7pH4fdUEK7u89y0pYeVZ0VBf3kSGB6E3BOmkoASCdcq58q2/8ms872mGClCQA5MUj7BOjv3cAKmVdMrw7GnXlxr0L2UuzqwJHSYm4WDw9UYSuAdRPyZVswW5qRIhQPUDIvHWSOzcCS4rYzwI/T2DBg2Kf25S/FQ0AIv56evhW6gNehtpTSu9KGYouoXXVsijRFRSt6GUYAEoB69TnsYXgojBpRImBo6OqjeV1mWcdRsfHjy6zJVs7aNvD/wLwz56XG5MG1jFCW5VylRIX4cP9l6nsLjpFtR6heko7AHKgpqEuptzxLHBuXM8Y4ywQAOXdT9F4gNEn6BXoo9gJtdiFUypNGaAM1Yr/1rgAHc+ErhF5/2Yso469bHx6KgEoNSyakyrH9+v9SidkOqKUPF9ohSgcAL2BNKAVH0qYN/QtS4Gf0UTvoxMRuFglKDSgPiCgRB+jpM+UvicGfIxGgI4yTjJEBQMAAGCcA0lvL4CozFiWLkj/Fhlwx1rHYKLqopI4phVgp4GL+gCzvVoskbC+dBaUyjcONaQoA8A8z6no0wsg4mjOWK6p2Of9LhXLIZfeH2dK+cjKUAs1xUBPHwgMlg4jOXHKS+y6SDMAml5i+QECQwJIOTkDCNWdl6inWhB5NpBAsf918toXzVqjzQICgDgRlUqS/wPszUSo/H+ZTpMvUkCkrmzKlW+lmZCKonegHxeet/ZuKI2nFe03dj/vGV6GpWblYJwV7xd/ADHKEOSxR+J0AAAAAElFTkSuQmCC"
+	}
+	Material: 19478159, "Material::sigil_curve_south_east.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 35778201, "Texture::sigil_curve_south_east.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::sigil_curve_south_east.png"
+		Media: "Video::sigil_curve_south_east.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_curve_south_east.png"
+		RelativeFilename: "sigil_curve_south_east.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 63865501, "Video::sigil_curve_south_east.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_curve_south_east.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_curve_south_east.png"
+		RelativeFilename: "sigil_curve_south_east.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA61JREFUWEfFl72OE0EQhOfMYizjs3R3CRI5ZEQ8wL0YAUIiQkIi4xEIEAHPhIQQGGSMZcxyoOrzN6ppD5eyydrz013dXV0ze/JgsfhT/uNzAoD75+fl9ziWW8NQPq/X5ec4ljvDUN+L6bTcHoaY17pf4xiwZ7NZ2e12ZT+O5ft+H2On02m5O5vFb61j34fVKuaWi0XMaV8AuLdcxkIZ2V9dFTnb7PdlOpmEUW2aDkPMy/DX7Tbm9Gi9nrP5PGx82W6L22ON25INrZWPAKDo15tNGMKR3jKmLBC9HDs4nMe+ySTACMjH9TpA/NjtKkhlFGByzJ4GgAxgSI4EQM/FfH5t6JChHmU8Ix4tGSUzCgLnetcSEB1OhFiPMqBHgHogcikIQGuxAWCyiZ0KAEe59pCQLIhMcMXrD0B446Uhk9gSn5wXkQENimxaRAQZvdcUnrgh+OPRUVK6w0tHZgMAjgFBCzqzxQOVR849Uk855cCRAHgpc3DyW3VAEeoRgzUh52Ix6ZQhQDDmDhlTyjOPsO324EgAwDBpFGOd+bSkxmghmHwTmNx6Tlgy03QBqGArkdBWOQOkutcJzikvCWsp5ZEQeUSuCwiMs9hJ5WCovVKPamLLlVRjtQQQyxUQo7RnJlSOzPmiuR4Ayoy/5izQpCbyQZSZTlvRSqynVACDM07MLGgNCXMEfhrepHBeCsiLjOcyvX5/febwVB2AgKSOk61XZ1dIzYsXaL6IW/lwkPHnbz7VscvLl30AtIxme/1KZH5Me4bcqrIlLuHYnT46e9qIU5ViXRJ0JGujNB8QWYB6vSznuUVfvftWcCyn8ACg8OhIB2B8jzguwQ5MoCGw3jh/fPGsSXevTA0JuakgQOr93MeySJ/n88GdK+pouUM53KaXuAqR7oH55gOhUDXCQQ/yrccjR+m0x4/5HGQDALQ4Qvd7FwvvfQinmivt+XzoqSuZbDiQdRrHujPq8duvd0Cuud8X+J3rD6hGij3Ffn3mwur1d3ZJXBS91z3qf7hJszZnRqWtQuRpzhH7TdkvptqTnUM8Dh9A+zi/KwANiFD66PBUY8QBSCNcrDLxaEeIR/S9y4sCODqMArHJaa923lov3q5q+v28cOaTBZ/X2BEAFBBhAci/bj1E//D0ydEHTKNA9gfwnLrNhcQ/v/j2cxD5WPboaUvvewfBMSzHXp5GB3wzUuwym9MKAPW+X71794T8GdfogH8XwFBnL/XSG+P6TQlovyxYvt554235F2yQQxuG2UBRAAAAAElFTkSuQmCC"
+	}
+	Material: 38698381, "Material::sigil_y_north.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 72507820, "Texture::sigil_y_north.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::sigil_y_north.png"
+		Media: "Video::sigil_y_north.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_north.png"
+		RelativeFilename: "sigil_y_north.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 13844534, "Video::sigil_y_north.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_north.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_north.png"
+		RelativeFilename: "sigil_y_north.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAhJREFUWEetlzFvE0EQhdfGmMg4VuIggUgPFTRQ0ZA/QIEo+QF0SJFoKKIIRYICpEh0/AAKCkRBj1JRUdFR0iCBCEGJsYw5YvQWvtW7yRkatrmLs7fzZua9mdnWbLY929lZT7eu9dP/Wic6nfS9qv563JOXo7S2tp1a5/r92buDrSQQmzfPpmOdTvpZVfk5mUzS8U4n/aiqtDseJx3cbbfToP8bLPt43xuPi2FArPR6+Qxf955+yMavnH6QWheWlmZCC4jb15eyEa3p4WE5UAdNqyqdXFjIgHzpd98fjbNf+x49/1KMj6bT1Lo0HM4OptO0OhymV+/XcyTu3Bhm41oChxfysN/tzg2tDDjoxW43dTudDFzP+88+1YzL0RwBvQiEkL/d28wgFAnyiPdY9kM5PEZBewVAgAQa45dXtgoo7ckcIGSKwv5olN7sbhQQxWi7XftQIHLYLR14L8NyiAXhLi7fy+nFgQyAFOgPAOgdEKhDILXgR40DxhX97hzAcxn37wU2p0ARiMbJP+lwEEoLYOBIlN2ZwSAT1Y1HWXJGBqAPvk0mhclCRjhRRxMIwHC4Dl3u9fJZsJ2cEzEx3/dnAB565DQPBN5CMB3m7yKsE65JMhBe39YAuPQIETJ8/fFuJmaMhOdc7xAust2Jp32QtJYCB+DI5WETMd240kiFi8YhnIPQey5EMQVeSFzL5DaqQ3uajCNRDLl6AKRnBqC8CQ0FCc+IggqJ/k8VJB1UzMcvvuYKh86z3KxOEFl45c+SAuo1LIVsNKB4CBKVMRm/uvowsz/mGic8DUSnFgHqONr2/EYQyE8gtM4vbuQ0IOVYqlGWIogdolBKsRumkFBmvaw6MGe8e0g6PddUQSLJ37VeIMNa//IErniN50C8JfSRfBFIBiCZachQIyofWhslEp5feQL5lAKk6l4TZs6kaCmiNKwjJHT9QxZntd4hKhHQZKOJidUEZt6IVmTItBOZHIuHDx2xzVJDIK2nA+81UZFiRaIUIs1/0WMnYeyA2usRcGk1dUyfDSV5HKkBYLop2g0jFr9TI5oi4MWM/ajK06s0atU44ABi2zw1GOQpWXvoZl4Bnd3k21XltQHjBQCl2Nmqdw7QiC6FxGY1jwN8F6fnpsjW6oCHSDMCvPD8urQ8Au51k+GYXu4ZR4ZSv5T4xEtz0SUDpTB4UAe8X8SeEMsziikXE3kZvW5SBWO2gND/BQDpyRAgvX749Iw880TEzagp5N5SmzzyCAiAmg1XOc93ef8zCTMjlJEMwvkVCvSkQTnzCueXDc0Brn3mB+8DOMNcUZOhvP+8v5+Bxo99QqIY0VZ98vWO6fNkbOXIlTSUZoS244YoTa+IsQ7EMV3f+oUmplHO/QIwI3nqMgStcwAAAABJRU5ErkJggg=="
+	}
+	Material: 78116957, "Material::sigil_y_right.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 40628352, "Texture::sigil_y_right.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::sigil_y_right.png"
+		Media: "Video::sigil_y_right.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_right.png"
+		RelativeFilename: "sigil_y_right.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 69403859, "Video::sigil_y_right.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_right.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_right.png"
+		RelativeFilename: "sigil_y_right.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA/9JREFUWEe9l7FuE1EQRV/CYiLjWCRBgKCHjoqKKj9AgSgo+AA6JCQoQIoiFAkapEh0fAIFouAHQkNFRccHRAJEEuQYy5glRvc55+nueNOyzdq7897Mu3PnzuzCdLo93dl5mO7f6qX/eb1+P0zr69tp4WqvN/1yuJUUxOa9y+lUVaW/dZ3v4/E4na6q9Keu095olM5UVeosLqZ+bxYsdrv7+/nd+X6/PP86GKQrq6tlD+0nu+VOJ718u5+d37z4YhbApX4/fdh9nIN4cPtcdqJrcnRUQPld13nx2aWldDAazdn4+1/jcVnn9oeTSeLkcj6cTGYBKNLBcJg+7W3kIB7dWZ1zrhPKyVq3mxf2Op1816XnoNOpqvJc77CTDc6vrzzL63TQEsCPwSA//HywWZBg4+gEZPSeS+j4JRuc6/78zfcMuzuXfQ4gkg9OKB3uBDvQ0J3gdFcQQmBS1xlB1vrJFUxO73HwJQBBq0uwChrSoeqQIy10QsoW2OFLDFZ7+snhCfaNFIjxOCd6kFAQIqrIJSI57LLVRv5ctqoCP3kMDvQyAhCLjcm97gQhYsoJ8MtW64BS/z0InF9b3sip4VC+Xr8bAegkEIzfMQiHm5xLI0ih3gO7nPsVnWvvHAARUv+eI9j88duThk74aWVPihAZ2A708CWiWIQIcXEEYiCUqDjhQYv5fnKJjFLjzoSQkCJ1EL4hRBF+GbkqejqoDvjy6t3PXOc31rZmZXasopF8QsoP28oB8h+dU+uxRNucUxnkXY51qZJQy1KGeqmGQxlCHD8FG6F4BCFbGgsC5GRGvnnnQqT9CwKUU5tTalYb01xidXjjigEgZO4Dm1YpBhFacFuni2JFF22rd1fNGGgjAM+Tb8TJlT/fQBufREycOgkdSfYpOqAhQy1ZBJHmI7txUWwmSHEkpgtZbFouTg0d0AtvoSKly7I3H+96lCtBPL17oehAQwqP5VsHpCIaJBTBVA0wdqXbzTUL1J5LxMeJ5emglXN69kAxGynQRKSBhJYrp23dq20A8QkIsoKEzxMoIQTnkI2JSHnjZFRAPD1BIMVA7JqvZy7bfmof62Q31wv0MDYa6pgZ8KSgvOHIxierNm0oAfg8EMsmKhnOY2t16cVGKEVi+qhWAvDNgNTnPlfA6MhTEMuN/z7oelWUeUAPRURd0oKoZj5yq4Q0bsWgnRORrOIV84RK1Mf5E3UgQk0QDmEctSBx2/DqxFR1sH8jANU9ctumZAiVSiiO33Fylq0LGdDH747GQMKmCFJkPTMgX0bUsqNFkNE5Eq7nHsTcl5FLcfzAgFSy8d4fS9fJ6KkDBf/uKM2I+U1GJ32cIsW+UfyAdZa7PfzwMV4l+g9avot0iT3lBgAAAABJRU5ErkJggg=="
+	}
+	Material: 23382136, "Material::sigil_y_south.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 50862942, "Texture::sigil_y_south.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::sigil_y_south.png"
+		Media: "Video::sigil_y_south.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_south.png"
+		RelativeFilename: "sigil_y_south.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 57092620, "Video::sigil_y_south.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_south.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\sigil_y_south.png"
+		RelativeFilename: "sigil_y_south.png"
+		Content: , "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA/hJREFUWEeNlzFrVFEQhd/GdQ3rJiQbUDG9VtpoZWP+gIVYWPgD7ARBC4UYQkALhYCdpYWFhVj4AxIbKys7W0FBIUbMGtZ1ycq5u9/lvMldyGv2vbf3zpw5c2buvMa5Tmd0otmsdP0dDtPvUa8X73rVyspmdX5utbYFe/5ymu3GhYWFUWtmJq0dHBwkEGfm56tjzWbV7/er481mvtcannX/6OWXIgAcC0i0PddqVfOdTloi+41L3e5IjmFgudtNfwyOwMazNz8TgCunn1Q7+/vJhvZjHCD8p2cBODk7W/0bDqveYDAGsDcY1KLGeavZzEDivYw9fv2jBqAEHla1XsziWM9iJ6VAtGvz714vgZazeJVAwQAaWGq3a8zhXO/FggDsTpgiNQ2JEGRy4pECZlo6IgDPPSn1QKSJTqs11tskxQlARD7NMcxos6J7/vZXFqGMi0l+ZUN2dSl63ksDCD6lQABi7iILJUAO4OLies25M4qzWIaUao0BHHukfh91QQouL23USlh5VnRUF/eRIYGYmoKjpKEEgHTKufKtvvGn38+0wwQpSQDIi0c4TYz+3gGolHXJ8GK7ncuNexeyl2auAkdJibhYPD1RhK4B1E/JlWzBbmpEiFA9QMi8dZI7NwJLitjPAj9PYMGDYp/blL9DGgBE/PX08F+pD3gZak8pvYfKUHQJrauWRYmuoGhFL8MAUApYpz6PLQQXhUkjKjJApCUwXsuKlEZ0dflpEp0rPta/NztnN6UA9daqIBzR/p871/vt7bvV2q2zudxi7xBjHM0EBmMZQGwy8Zm2KuUSOer/vLeRQNy7MT6KS6coIGJKMwA5EIXqYqKaZ20QvdSx553hRWvef72fQDy8eWrcdMI8QZ+AbdJZ7IRa7MKhDKNzGUPAivrD9weZidg3YCCeCbkRef8mMupYjqLiYSnOCR93VjMTNCyakyrHpy+9P9QJmY4oJUVfck70DlxrIxM+lDBvSEe1FPgZTfSMTn7mx0pwQeGcqD/triUmbl/r1NIUWUkM+BgNtVHtPsn4YcLe2PNlh+q4c30hNTN04Wmo9QEXiPd5F6Sz4Eern/mskUC9OohewSjArIFY8/GQkXG1WPLt3TKqulS+CJM+4c0oM8A87x8bPuc5hd5sSIfP+xngZMjVMyWqPgETAl8rQ+9wlE4JRGw0fm4oz2po3rwABBPSBPYzgPVX39KEy3wX5ziMKH8+vsMAI7c7j2eC1lIdApEZIOf6xJJx/3TCsRaLZhmVgADiivaKiIqnirTXQTS2tqqRIudMR6HuwNUuQP4f5Rd7vafQ5wl6B+lojEabI9EeT6uU58lHK8Y4SGAlGi59gpdYcU38B4KbYu76fijSAAAAAElFTkSuQmCC"
+	}
+	Material: 41896275, "Material::snake-a_0.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 85126905, "Texture::snake-a_0.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::snake-a_0.png"
+		Media: "Video::snake-a_0.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\snake-a_0.png"
+		RelativeFilename: "snake-a_0.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 17531957, "Video::snake-a_0.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\snake-a_0.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\snake-a_0.png"
+		RelativeFilename: "snake-a_0.png"
+		Content: , "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"
+	}
+	Material: 48910821, "Material::snake-a_1.png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0.2,0.2,0.2
+			P: "Diffuse", "Vector3D", "Vector", "",0.8,0.8,0.8
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Texture: 99091518, "Texture::snake-a_1.png", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::snake-a_1.png"
+		Media: "Video::snake-a_1.png"
+		FileName: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\snake-a_1.png"
+		RelativeFilename: "snake-a_1.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Video: 99943248, "Video::snake-a_1.png", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\snake-a_1.png"
+		}
+		UseMipMap: 0
+		Filename: "C:\Users\SeltT\OneDrive\Desktop\Projects\NewProject\Sprites\Tiles\Dungeon Crawl Stone Soup Full\dungeon\floor\snake-a_1.png"
+		RelativeFilename: "snake-a_1.png"
+		Content: , "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"
+	}
+	AnimationStack: 25557644, "AnimStack::attack", "" {
+		Properties70:  {
+			P: "LocalStop", "KTime", "Time", "",13470962750
+			P: "ReferenceStop", "KTime", "Time", "",13470962750
+		}
+	}
+	AnimationLayer: 32266115, "AnimLayer::attack", "" {
+	}
+	AnimationCurveNode: 59996188, "AnimCurveNode::attack.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 82000566, "AnimCurve::attack.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,11546539008
+		}
+		KeyValueFloat: *2 {
+			a: 90,90
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 79505791, "AnimCurve::attack.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,11546539008
+		}
+		KeyValueFloat: *2 {
+			a: 0,90
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 45441857, "AnimCurve::attack.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,11546539008
+		}
+		KeyValueFloat: *2 {
+			a: 0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurveNode: 50112218, "AnimCurveNode::attack.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 82185535, "AnimCurve::attack.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 95737767, "AnimCurve::attack.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: -6.25
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 39571164, "AnimCurve::attack.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+}
+
+; Object connections
+;------------------------------------------------------------------
+
+Connections:  {
+	C: "OO",59213125,0
+	C: "OO",81719727,59213125
+	C: "OO",73850812,81719727
+	C: "OO",62046583,81719727
+	C: "OO",81840656,81719727
+	C: "OO",39992276,59213125
+	C: "OO",36916348,39992276
+	C: "OO",22053167,39992276
+	C: "OO",81840656,39992276
+	C: "OO",19478159,39992276
+	C: "OO",91066448,59213125
+	C: "OO",88918540,91066448
+	C: "OO",38103521,91066448
+	C: "OO",80162628,59213125
+	C: "OO",15332599,80162628
+	C: "OO",81840656,80162628
+	C: "OP",13911599,38103521, "DiffuseColor"
+	C: "OO",16208603,13911599
+	C: "OP",83612949,62046583, "DiffuseColor"
+	C: "OO",96218052,83612949
+	C: "OP",87076877,22053167, "DiffuseColor"
+	C: "OO",28228792,87076877
+	C: "OP",89378478,81840656, "DiffuseColor"
+	C: "OO",6797883,89378478
+	C: "OP",35778201,19478159, "DiffuseColor"
+	C: "OO",63865501,35778201
+	C: "OP",72507820,38698381, "DiffuseColor"
+	C: "OO",13844534,72507820
+	C: "OP",40628352,78116957, "DiffuseColor"
+	C: "OO",69403859,40628352
+	C: "OP",50862942,23382136, "DiffuseColor"
+	C: "OO",57092620,50862942
+	C: "OP",85126905,41896275, "DiffuseColor"
+	C: "OO",17531957,85126905
+	C: "OP",99091518,48910821, "DiffuseColor"
+	C: "OO",99943248,99091518
+	C: "OO",32266115,25557644
+	C: "OP",59996188,59213125, "Lcl Rotation"
+	C: "OO",59996188,32266115
+	C: "OP",82000566,59996188, "d|X"
+	C: "OP",79505791,59996188, "d|Y"
+	C: "OP",45441857,59996188, "d|Z"
+	C: "OP",50112218,59213125, "Lcl Translation"
+	C: "OO",50112218,32266115
+	C: "OP",82185535,50112218, "d|X"
+	C: "OP",95737767,50112218, "d|Y"
+	C: "OP",39571164,50112218, "d|Z"
+}
+
+; Takes section
+;------------------------------------------------------------------
+
+Takes:  {
+	Current: ""
+	Take: "attack" {
+		FileName: "attack.tak"
+		LocalTime: 0,13470962750
+		ReferenceTime: 0,13470962750
+	}
+}

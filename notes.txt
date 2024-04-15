@@ -1,0 +1,26 @@
+
+Martha
+The vermin are relentless every night they force me to cook for them 
+If I try to tell them anything they hiss at me and call me vermin 
+I need a brave knight who can help me rid me of my ailment! 
+Else I will be destitute. 
+
+Considering the GPU is like a simple CPU with a lot of cores that can do some complicated math very fast, machine learning systems can run a thousand scenarios and improve themselves relatively quickly compared to if they ran on the CPU.
+
+There are also cases where you don't need to render an image, but there is a lot of parallel operations you want to run and the results of them can be stored in an image.
+
+For example, if you needed to perform a particular calculation on a 1000 input values, and the output values will always be within a specific range (like 0 to 256), then you can run the calculation on the GPU, and have the result stored in a grayscale image that can go from 0 (black) to 256 (white).
+
+Sometimes this is even done on normal data just to visualize how it looks as an image, since certain data drawn out can bring out certain patterns that may not necessarily be obvious.
+
+
+
+    The engines don’t move the ship at all. The ship stays where it is and the engines move the universe around it.
+
+    Futurama
+TransformedVector = TranslationMatrix * RotationMatrix * ScaleMatrix * OriginalVector;
+
+[10:15 AM]Method: gaps are not supported in the names of projects
+[10:15 AM]Method: Use _
+
+Add circle of protection

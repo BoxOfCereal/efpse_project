@@ -1,0 +1,4 @@
+[
+    {"instruction":"go to 1","output":"1"},
+    {"instruction":"go to 2","output":"2"}
+]

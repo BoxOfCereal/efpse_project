@@ -1,0 +1,183 @@
+procedure inc_quest_progress
+hide yes_btn
+hide no_btn
+global.elf_mission += 10
+call dialogue_loop
+end;
+procedure finish
+global.elf_mission = 10
+end;
+procedure greeting
+greeting = 1
+sound welcome Sounds/female_hello1.wav
+play sound welcome
+//random intro?
+font 32
+text "ELF: Just when I thought this was a clean town,A dwarf shows up." 0 0 0
+font 24
+text "HERO: Elven women are known for their grace." 0 0 0
+auto 1
+text " " 0 0 0
+auto 0
+end;
+procedure dialogue_loop
+//loading images
+image elf Sprites/Decorations/elf/elf.png
+image player Sprites/Player/player.png
+image btn Menu/testbtn.png
+image back Menu/back.png
+
+//show [imageName] [x] [y] [time] - shows image within set time. imageName is the name that was set to an image when loading. If time is 0 or omitted then image will be shown immediately.
+hide yes_btn
+hide no_btn
+
+//vn mode enabled
+vn 1
+bg back
+show player 25 10 0
+show elf 825 10 0
+if "$greeting" <= 0{
+greeting = 1
+call greeting
+}
+
+button btn 400 250 mission
+button btn 400 350 bye
+button btn 400 450 finish
+pause
+//button [imageName] [x] [y] [procedurename]
+vn 0
+end;
+procedure mission
+hide btn
+text "$global.elf_mission"
+
+//Quest intro
+if "$global.elf_mission" <= 0{
+text "thank goodness you're here!"
+image elf_happy Sprites/Decorations/elf/elf.png
+image bg Sprites/Comic/bg.png
+image panel0 Sprites/Comic/prat0.png
+image panel1 Sprites/Comic/prat1.png
+image panel2 Sprites/Comic/prat2.png
+image panel3 Sprites/Comic/prat3.png
+image yes_btn Menu/yesl_btn.png
+image no_btn Menu/nol_btn.png
+
+text "It's been horrible let me explain!"
+auto 1
+auto 0
+
+show bg 0 0 .25
+//front bg
+show panel0 0 0 1
+text " " 0 0 0
+text "Martha: The vermin are relentless every night they force me to cook for them " 0 0 0
+//pause
+show panel1 550 0 1
+text "If I try to tell them anything they hiss at me and call me vermin " 0 0 0
+//pause
+show panel2 0 400 0
+text "I need a brave knight who can help rid me of my ailment! " 0 0 0
+//pause
+show panel3 400 400 0
+text "Else I will be destitute. " 0 0 0
+//pause
+
+//global.elf_mission+=1 // 1 start mission
+hide panel0
+hide panel1
+hide panel2
+hide panel3
+hide bg
+
+text "Will you help me? " 0 0 0
+
+button yes_btn 400 250 inc_quest_progress
+button no_btn 400 350 dialogue_loop
+pause
+}
+
+if "$global.elf_mission" == 1 {
+text "thank you,Just let me knowWhen you're finished"
+}
+
+//Quest completion
+if "$global.elf_mission" == 10 {
+//loading images
+image bg Sprites/Comic/bg.png
+image panel4 Sprites/Comic/U1.png
+image panel5 Sprites/Comic/open.png
+image panel6 Sprites/Comic/rats6.png
+image panel7 Sprites/Comic/rats8.png
+image xp_blank Sprites/journal/blank.png 
+image gp_blank Sprites/journal/blank.png 
+image coins Sprites/Items/gold_pile_25.png
+
+
+//Comic
+text "Have you had any luck with the rats?"
+auto 1
+auto 0
+
+show bg 0 0 .25
+//front bg
+show panel4 0 0 1
+text " " 0 0 0
+text "HERO:I have slain thine adversarial vermin" 0 0 0
+//pause
+show panel5 550 0 1
+text "HERO: My encounters were dire" 0 0 0
+//pause
+show panel6 0 400 0
+text "My victories, Triumphant " 0 0 0
+//pause
+show panel7 400 400 0
+text "The objectives are well met, I give room to speak to thee." 0 0 0
+//pause
+
+//hide comic
+hide panel4
+hide panel5
+hide panel6
+hide panel7
+hide bg
+
+text "Martha: Thank you for your help. " 0 0 0
+text "Please accept this: " 0 0 0
+pause
+
+//reward animation
+show coins 400 200 .5
+move coins 200 200 .5
+hide coins
+
+label gp_blank 100 100 "250" 24 0 0 0 left 
+label xp_blank 250 100 "500" 24 0 0 0 left
+move gp_blank 100 50 .5
+move xp_blank 250 50 .5
+hide gp_blank
+hide xp_blank
+
+//update values
+global.player.exp+=500
+global.coins+=250
+
+}
+
+if $global.elf_mission == 11 {
+text "thank you!"
+} else {
+text "error" 0 0 0
+call dialogue_loop
+}
+end;
+procedure bye
+text "bye World!" 0 0 0
+hide btn
+map return
+end
+
+call dialogue_loop
+
+map return

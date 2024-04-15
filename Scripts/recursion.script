@@ -1,0 +1,15 @@
+procedure helloworld
+// Assuming that global.i = 0 Has been declared in your setup script or Global environment first.
+text "hello, global.i $global.i"
+if "$global.i" == 10 {
+global.i = 0
+map return
+} else {
+
+// Loop logic here
+global.i+=1
+call helloworld
+}
+end
+
+call helloworld

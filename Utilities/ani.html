@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Renderer with Photo</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #container {
+            display: flex;
+            flex: 1;
+        }
+
+        #formContainer {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        #outputContainer {
+            flex: 1;
+        }
+
+        form {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"],
+        textarea,
+        input[type="color"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            background-color: #555;
+            border: none;
+            color: #fff;
+        }
+
+        button[type="submit"],
+        button[type="button"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover,
+        button[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #output {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        img {
+            margin: 10px;
+        }
+
+        .color-pickers {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .color-pickers label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .color-pickers input[type="color"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="formContainer">
+            <h1>Image Renderer with Photo</h1>
+            <form id="imageForm">
+                <label for="height">Height (pixels):</label>
+                <input type="number" id="height" name="height" value="256" required>
+                <label for="width">Width (pixels):</label>
+                <input type="number" id="width" name="width" value="128" required>
+                <div class="color-pickers">
+                    <label for="backgroundColor">Background Color:</label>
+                    <input type="color" id="backgroundColor" name="backgroundColor" value="#ffffff">
+                    <label for="textColor">Text Color:</label>
+                    <input type="color" id="textColor" name="textColor" value="#000000">
+                    <label for="borderColor">Border Color:</label>
+                    <input type="color" id="borderColor" name="borderColor" value="#000000">
+                    <label for="fontSize">Font Size:</label>
+                    <input type="number" id="fontSize" name="fontSize" min="1" value="10" required>
+                    <label for="photoOffsetX">Photo Offset X:</label>
+                    <input type="number" id="photoOffsetX" value="0" name="photoOffsetX">
+                    <label for="photoOffsetY">Photo Offset Y:</label>
+                    <input type="number" id="photoOffsetY" value="0" name="photoOffsetY">
+                </div>
+                <!-- https://stackoverflow.com/a/26106287/3684843 Weird
+                In a tribute placeholder -->
+                <textarea id="stateList" name="stateList" rows="5" required placeholder="IDLE,3&#10;ATTACK,3"></textarea>
+                <label for="photoUpload">Optional Photo Upload:</label>
+                <input type="file" id="photoUpload" accept="image/*">
+                <button type="submit">Render Images</button>
+            </form>
+        </div>
+        <div id="outputContainer">
+            <div id="output"></div>
+            <button id="downloadImages">Download Images</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('imageForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input values
+            const height = parseInt(document.getElementById('height').value);
+            const width = parseInt(document.getElementById('width').value);
+            const backgroundColor = document.getElementById('backgroundColor').value;
+            const textColor = document.getElementById('textColor').value;
+            const borderColor = document.getElementById('borderColor').value;
+            const fontSize = parseInt(document.getElementById('fontSize').value);
+            const stateListText = document.getElementById('stateList').value.trim();
+            const photoOffsetX = parseInt(document.getElementById('photoOffsetX').value) || 0;
+            const photoOffsetY = parseInt(document.getElementById('photoOffsetY').value) || 0;
+
+            // Parse state list
+            const stateList = stateListText.split('\n').map(line => {
+                const [state, frames] = line.split(',');
+                return { state: state.trim(), frames: parseInt(frames.trim()) };
+            });
+
+            // Render images
+            renderImages(height, width, backgroundColor, textColor, borderColor, stateList, fontSize, photoOffsetX, photoOffsetY);
+        });
+
+        function renderImages(height, width, backgroundColor, textColor, borderColor, stateList, fontSize, photoOffsetX, photoOffsetY) {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            stateList.forEach(stateData => {
+                for (let i = 1; i <= stateData.frames; i++) {
+                    const img = document.createElement('img');
+                    generateImageDataUrl(stateData.state, i, height, width, backgroundColor, textColor, borderColor, fontSize, photoOffsetX, photoOffsetY)
+                        .then(dataUrl => {
+                            img.src = dataUrl;
+                            img.setAttribute('data-state', stateData.state); // Store state name as data attribute
+                            img.setAttribute('data-frame', i); // Store frame number as data attribute
+                            outputDiv.appendChild(img);
+                        })
+                        .catch(error => console.error('Error generating image data URL:', error));
+                }
+            });
+        }
+
+        function generateImageDataUrl(state, frameNumber, height, width, backgroundColor, textColor, borderColor, fontSize, photoOffsetX, photoOffsetY) {
+            return new Promise((resolve, reject) => {
+                // Create a new canvas element
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+
+                // Draw background
+                ctx.fillStyle = backgroundColor;
+                ctx.fillRect(0, 0, width, height);
+
+
+                // Draw photo if available
+                const photoUpload = document.getElementById('photoUpload');
+                if (photoUpload.files.length > 0) {
+                    const photo = new Image();
+                    photo.src = URL.createObjectURL(photoUpload.files[0]);
+                    photo.onload = function () {
+                        ctx.drawImage(photo, photoOffsetX, photoOffsetY);
+                        // Draw border
+                        ctx.strokeStyle = borderColor;
+                        ctx.lineWidth = 2;
+                        ctx.strokeRect(0, 0, width, height);
+
+                        // Draw state name and frame number on the canvas
+                        ctx.font = `${fontSize}px Arial`; // Set font size and style
+                        ctx.fillStyle = textColor; // Text color
+                        ctx.fillText(`${state} Frame ${frameNumber}`, 5, 15); // Draw text
+
+                        // Convert the canvas to a data URL after drawing the image
+                        resolve(canvas.toDataURL('image/png'));
+                    };
+                } else {
+                    // Draw border
+                    ctx.strokeStyle = borderColor;
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(0, 0, width, height);
+
+                    // Draw state name and frame number on the canvas
+                    ctx.font = `${fontSize}px Arial`; // Set font size and style
+                    ctx.fillStyle = textColor; // Text color
+                    ctx.fillText(`${state} Frame ${frameNumber}`, 5, 15); // Draw text
+
+                    // If no photo is available, resolve with only the canvas
+                    resolve(canvas.toDataURL('image/png'));
+                }
+            });
+        }
+
+        document.getElementById('downloadImages').addEventListener('click', function () {
+            const images = document.querySelectorAll('#output img');
+            images.forEach(img => {
+                const state = img.getAttribute('data-state');
+                const frame = img.getAttribute('data-frame');
+                const link = document.createElement('a');
+                link.href = img.src;
+                link.download = `${state}_Frame${frame}.png`;
+                link.click();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+instructions:
+    Write a finite state machine for EFPSE script that loads Zero through seven frames of an image called Weapon. Load weapon fire and weapon reload sounds. 
+    
+    Define three states: IDLE, ATTACK and RELOAD.
+    
+    Loop the IDLE state for two frames where each frame is the first frame for a quarter of a second each and set ready on the last frame
+
+    Set the attack state to transition into the idle state. There will be eight frames in the attack state. the first six are frames 2 through 7 of weapon and they all last for a second and the last two frames Are both frame one and a quarter of a second. On frame three call sound and attack on weapon fire on frame 4 use the muzzle flash and on frame 5 call READY
+
+    Set the reload state to transition into the idle state. Put five frames of the first weapon frame where the last 4 last for 0.1 second on the second to last frame call reload and on the last frame play the weapon reload sound. Offset the Y position by 200 units for the second and third last frame
+
+output:
+    image Weapon 0 7
+    sound WeaponFire
+    sound WeaponReload
+    
+    state IDLE NONE 0
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 READY
+    
+    state ATTACK IDLE 0
+    frame 2 1 0 0 0 NONE
+    frame 3 1 0 0 0 SOUNDANDATTACK 0
+    frame 4 1 0 0 0 MUZZLEFLASH
+    frame 5 1 0 0 0 READY
+    frame 6 1 0 0 0 NONE
+    frame 7 1 0 0 0 NONE
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 NONE
+    
+    state RELOAD IDLE 0
+    frame 1 0 0 0 0 NONE
+    frame 1 0.1 0 0 0 NONE
+    frame 1 0.1 0 200 0 NONE
+    frame 1 0.1 0 200 0 RELOAD
+    frame 1 0.1 0 0 0 SOUND 1
+
+instructions:
+    Create a finite state machine for an EFPSE script that involves loading zero through seven frames of an image named "Weapon" and incorporating weapon fire and weapon reload sounds. Define three states: IDLE, ATTACK, and RELOAD.
+
+    For the IDLE state, loop for two frames, with each frame displaying the first frame of the image for a quarter of a second, and set the state to "READY" on the last frame.
+
+    Transition the ATTACK state back to IDLE. In the ATTACK state, include eight frames. Frames one through five should display frames two through seven of the weapon image for one second each. The last two frames should be frame one, each lasting for a quarter of a second. Call the "sound and attack" function on frame three, display the muzzle flash on frame four, and set the state to "READY" on frame five.
+
+    Similarly, transition the RELOAD state back to IDLE. In the RELOAD state, display five frames of the first weapon frame. The last four frames should last for 0.1 second each, and on the second-to-last frame, call the "reload" function. On the last frame, play the weapon reload sound. Additionally, offset the Y position by 200 units on the second and third-to-last frames.
+output:
+    image Weapon 0 7
+    sound WeaponFire
+    sound WeaponReload
+    
+    state IDLE NONE 0
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 READY
+    
+    state ATTACK IDLE 0
+    frame 2 1 0 0 0 NONE
+    frame 3 1 0 0 0 SOUNDANDATTACK 0
+    frame 4 1 0 0 0 MUZZLEFLASH
+    frame 5 1 0 0 0 READY
+    frame 6 1 0 0 0 NONE
+    frame 7 1 0 0 0 NONE
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 NONE
+    
+    state RELOAD IDLE 0
+    frame 1 0 0 0 0 NONE
+    frame 1 0.1 0 0 0 NONE
+    frame 1 0.1 0 200 0 NONE
+    frame 1 0.1 0 200 0 RELOAD
+    frame 1 0.1 0 0 0 SOUND 1
+
+instructions:
+    Craft a finite state machine for an EFPSE script focusing on loading frames zero through seven of an image named "Weapon." Additionally, incorporate the sounds for weapon fire and weapon reload. Establish three states: IDLE, ATTACK, and RELOAD.
+
+    During the IDLE state, sustain a loop for two frames. Each frame should showcase the initial frame of the image, each lasting a quarter of a second. Conclude this state by setting it to "READY" on the final frame.
+
+    Transition the ATTACK state back to IDLE. Within ATTACK, feature eight frames. Display frames two through seven of the weapon image for one second each, and conclude with two frames showing the first frame, each lasting a quarter of a second. On frame three, execute the "sound and attack" function, present the muzzle flash on frame four, and mark the state as "READY" on frame five.
+
+    Similarly, transition the RELOAD state back to IDLE. In the RELOAD state, present five frames of the initial weapon frame. The final four frames should each last for 0.1 second, and on the second-to-last frame, activate the "reload" function. Conclude the state by playing the weapon reload sound on the last frame. Additionally, adjust the Y position by 200 units on the second and third-to-last frames.
+output:
+    image Weapon 0 7
+    sound WeaponFire
+    sound WeaponReload
+    
+    state IDLE NONE 0
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 READY
+    
+    state ATTACK IDLE 0
+    frame 2 1 0 0 0 NONE
+    frame 3 1 0 0 0 SOUNDANDATTACK 0
+    frame 4 1 0 0 0 MUZZLEFLASH
+    frame 5 1 0 0 0 READY
+    frame 6 1 0 0 0 NONE
+    frame 7 1 0 0 0 NONE
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 NONE
+    
+    state RELOAD IDLE 0
+    frame 1 0 0 0 0 NONE
+    frame 1 0.1 0 0 0 NONE
+    frame 1 0.1 0 200 0 NONE
+    frame 1 0.1 0 200 0 RELOAD
+    frame 1 0.1 0 0 0 SOUND 1
+
+instructions:
+    Please make a finite state machine for a cow. Load images zero through three. The first state will be idle.Please make it repeat with two instances of frame 0 both at a delay of 0.25 seconds.
+    
+    The second state should be the death and the transition into dead state. State has three frames one through three each at .166 seconds.
+
+    The third state should be dead. State has twoe frame at .25 seconds.
+    
+    
+    No offsets are needed.
+    
+output:
+    image cow 0 3
+
+    state IDLE NONE 0
+    frame 0 0.25 0 0 0 NONE
+    frame 0 0.25 0 0 0 READY
+
+    state DEATH DEAD 0
+    frame 1 0.166 0 0 0 NONE
+    frame 2 0.166 0 0 0 NONE
+    frame 3 0.166 0 0 0 NONE
+
+    state DEAD NONE 0
+    frame 3 0.25 0 0 0 NONE
+    frame 3 0.25 0 0 0 NONE
+
+instructions:
+    Create a finite state machine for a cow that involves loading images zero through three. The initial state should be "idle," repeating twice with two instances of frame zero, each at a delay of 0.25 seconds.
+
+    The second state should represent the cow's death and transition into the "dead" state. This state comprises three frames, numbered one through three, each lasting for approximately 0.166 seconds.
+
+    The third state, "dead," contains two frames, both lasting for 0.25 seconds.
+
+    No offsets are required.
+
+output:
+    image cow 0 3
+
+    state IDLE NONE 0
+    frame 0 0.25 0 0 0 NONE
+    frame 0 0.25 0 0 0 READY
+
+    state DEATH DEAD 0
+    frame 1 0.166 0 0 0 NONE
+    frame 2 0.166 0 0 0 NONE
+    frame 3 0.166 0 0 0 NONE
+
+    state DEAD NONE 0
+    frame 3 0.25 0 0 0 NONE
+    frame 3 0.25 0 0 0 NONE
+instructions:
+    Create a finite state machine animation depicting the different states of a cow. The animation should load four images labeled 0 through 3. 
+
+    The first state is "idle" and should loop the image 0 twice, with each frame displayed for 0.25 seconds.
+
+    The second state is "death," representing the transition to the dead state. This state should cycle through images 1, 2, and 3, with each frame displayed for 0.166 seconds.
+
+    The third state is "dead," which should loop image 3 twice, with each frame shown for 0.25 seconds.
+
+    No offsets or additional positioning adjustments are required for the images.
+
+output: 
+    image cow 0 3
+
+    state IDLE NONE 0
+    frame 0 0.25 0 0 0 NONE
+    frame 0 0.25 0 0 0 READY
+
+    state DEATH DEAD 0
+    frame 1 0.166 0 0 0 NONE
+    frame 2 0.166 0 0 0 NONE
+    frame 3 0.166 0 0 0 NONE
+
+    state DEAD NONE 0
+    frame 3 0.25 0 0 0 NONE
+    frame 3 0.25 0 0 0 NONE
+instructions:
+    ```
+    PARTICLES imageindex i,l,x,y,z dx,dy,dz - creates particles. imageindex - number of sprite loaded, i - number of particles, l - particle lifetime, x,y,z - coordinates. Coordinates are local to enemy or player, meaning that 0,0,1 will always be in front of enemy or player. x - side offset, y - vertical offset, z - forward offset. dx,dy,dz - particle velocity. Also local to entity.
+    ```
+    Create a finite state machine animation for a chest. The chest should load images 0 through 1. The chest should loop the images 0 and 1 twice, with each frame shown for 0.25 seconds. Load another image called gold that has Images 0 through 5. 
+    
+    When the chest is killed. It should spawn gold particles using the third gold image for a 5 seconds. Spawn it at 0, 32, 16 and Give it 128 Unit velocity in the Y direction
+
+output:
+    image chest 0 1
+    image gold 0 5
+
+    state IDLE NONE 0
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 READY
+
+    state DEATH DEAD 0
+    frame 1 0.01 0 0 0 NONE
+    frame 1 0.01 0 0 0 PARTICLES gold 3,5,0,32,16 0,128,0
+    frame 1 0.01 0 0 0 NONE
+    frame 1 0.01 0 0 0 SPAWN Hp2 0,0,32 5,50
+
+    state DEAD NONE 0
+    frame 0 0.25 0 0 0 NONE
+    frame 0 0.25 0 0 0 NONE
+tags:
+    gpt3.5
+    casual
+    instruction
+    finite_state_machine
+instructions:
+    Develop a finite state machine animation for a chest. The chest animation should consist of images numbered 0 through 1. The chest is programmed to loop between images 0 and 1, with each frame displayed for a duration of 0.25 seconds. Additionally, incorporate another image named "gold," which contains images numbered 0 through 5.
+
+    Upon the chest being destroyed, it is tasked with generating gold particles. Utilize the third image from the "gold" sequence to represent these particles. These particles should persist for 5 seconds and spawn at coordinates (0, 32, 16) with a velocity of 128 units in the Y direction.
+output:
+    image chest 0 1
+    image gold 0 5
+
+    state IDLE NONE 0
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 READY
+
+    state DEATH DEAD 0
+    frame 1 0.01 0 0 0 NONE
+    frame 1 0.01 0 0 0 PARTICLES gold 3,5,0,32,16 0,128,0
+    frame 1 0.01 0 0 0 NONE
+    frame 1 0.01 0 0 0 SPAWN Hp2 0,0,32 5,50
+
+    state DEAD NONE 0
+    frame 0 0.25 0 0 0 NONE
+    frame 0 0.25 0 0 0 NONE
+tags:
+    gpt3.5
+    casual
+    instruction
+    finite_state_machine
+instructions:
+    Create a finite state machine animation for a chest using the following images:
+        
+    - Chest images: 0 and 1
+    - Gold particle images: 0 through 5
+
+    The animation should have two states:
+
+    1. Idle state
+        - Loop chest images 0 and 1 twice
+        - Display each frame for 0.25 seconds
+
+    2. Death state 
+        - Trigger when the chest is "killed"
+        - Spawn gold particles using image 3 from the gold particle images
+        - Spawn particles at position (0, 32, 16)
+        - Give particles an upward velocity of 128 units in the Y direction
+        - Show particles for 5 seconds
+
+    No other offsets or positioning adjustments are needed.
+output:
+    image chest 0 1
+    image gold 0 5
+
+    state IDLE NONE 0
+    frame 1 0.25 0 0 0 NONE
+    frame 1 0.25 0 0 0 READY
+
+    state DEATH DEAD 0
+    frame 1 0.01 0 0 0 NONE
+    frame 1 0.01 0 0 0 PARTICLES gold 3,5,0,32,16 0,128,0
+    frame 1 0.01 0 0 0 NONE
+    frame 1 0.01 0 0 0 SPAWN Hp2 0,0,32 5,50
+
+    state DEAD NONE 0
+    frame 0 0.25 0 0 0 NONE
+    frame 0 0.25 0 0 0 NONE
+tags:
+    claude 
+    casual
+    instruction
+    finite_state_machine
+
+instructions:
+    What is FSM?
+
+output:
+    FSM or Finite State Machine allows you to extend sprites animation and entities behavior on general. It is a set of lines that describe what sprites enemy or decorations will have and what will they do. In short, you can change how many sprites an entity has and how fast frames will switch one another.
+
+    To add a state machine, you need to create a file with the .states extension and the name of the weapon, enemy, or decoration in the ProjectName/States folder. When adding a state machine, the attack and reload speed will no longer depend on the setting in the editor - everything will be controlled only by the duration of the frames specified in the file. In addition, all sprites and (for weapons) some of the sounds will need to be loaded manually using the image and sound commands.
+tags:
+    human
+    question
+    finite_state_machine
+
+instructions:
+    What is a finite state machine?
+
+output:
+    FSM or Finite State Machine allows you to extend sprites animation and entities behavior on general. It is a set of lines that describe what sprites enemy or decorations will have and what will they do. In short, you can change how many sprites an entity has and how fast frames will switch one another.
+
+    To add a state machine, you need to create a file with the .states extension and the name of the weapon, enemy, or decoration in the ProjectName/States folder. When adding a state machine, the attack and reload speed will no longer depend on the setting in the editor - everything will be controlled only by the duration of the frames specified in the file. In addition, all sprites and (for weapons) some of the sounds will need to be loaded manually using the image and sound commands.
+tags:
+    gpt3.5
+    question
+    finite_state_machine

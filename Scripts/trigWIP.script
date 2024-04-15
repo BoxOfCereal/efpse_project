@@ -1,0 +1,107 @@
+procedure sine 
+//(x-x^3)/6
+
+end; //semicolon in necessary if you have more than one procedure 
+procedure cosine 
+//((1-x^2) / 2) + x^4/24
+
+end; //semicolon in necessary if you have more than one procedure 
+
+//status x:$global.player.currentX,y:$global.player.currentY,z:$global.player.currentZ\nangleX:$global.player.angleX,rotY:$global.player.rotY 1
+player check position global.player.currentX global.player.currentY global.player.currentZ
+player check position global.player.lastX global.player.lastY global.player.lastZ
+//player check rotation [varX] [varY] 
+player check rotation Xrotation Yrotation
+player check rotation Xrawrotation Yrawrotation
+
+//𝑢𝑛𝑖𝑡_𝑣𝑒𝑐𝑡𝑜𝑟_𝑥 = cos(𝑎𝑛𝑔𝑙𝑒_𝑥_𝑟𝑎𝑑) × cos(𝑎𝑛𝑔𝑙𝑒_𝑦_𝑟𝑎𝑑)
+//𝑢𝑛𝑖𝑡_𝑣𝑒𝑐𝑡𝑜𝑟_𝑦 = sin(𝑎𝑛𝑔𝑙𝑒_𝑥_𝑟𝑎𝑑)
+//𝑢𝑛𝑖𝑡_𝑣𝑒𝑐𝑡𝑜𝑟_𝑧 = cos(𝑎𝑛𝑔𝑙𝑒_𝑥_𝑟𝑎𝑑) × sin(𝑎𝑛𝑔𝑙𝑒_𝑦_𝑟𝑎𝑑)
+//The math is a really picky in the syntax parser you can't have spaces in between the operators
+
+//The output I'm really after
+x_cos_approx=0
+y_cos_approx=0
+//varsTemporary for calculation
+cos_approx = 1
+powerX = 0
+Base = 0
+//These are placeholder variables for the three terms in the Taylor series
+a = 0 //(x_rad ** 2) / 2
+b = 0 //(x_rad ** 4) / 24
+n = 0 //(x_rad ** 6) / 720
+
+//def approx_sin(x):
+//    # Convert degrees to radians
+//    x_rad = x * 0.0174533  # Approximation of pi/180
+//    # Taylor series expansion for sine
+//    sin_approx = x_rad - (x_rad ** 3) / 6 + (x_rad ** 5) / 120 - (x_rad ** 7) / 5040
+//    return sin_approx
+//def approx_cos(x):
+//    # Convert degrees to radians
+//    x_rad = x * 0.0174533  # Approximation of pi/180
+//    # Taylor series expansion for cosine
+//    cos_approx = 1 - (x_rad ** 2) / 2 + (x_rad ** 4) / 24 - (x_rad ** 6) / 720
+//    return cos_approx
+
+Xrotation*=0.0174533  // Approximation of pi/180
+Base+=$Xrotation
+powerX+=$Base
+powerX*=$Base //x^2
+a+=$powerX
+a/=2
+cos_approx-=$a
+
+powerX*=$Base
+powerX*=$Base //x^4
+b+=$powerX
+b/=24
+cos_approx+=$b
+
+
+powerX*=$Base
+powerX*=$Base //x^6
+n+=$powerX
+n/=720
+cos_approx-=$n //This is the cosine approximation of Rotation X
+x_cos_approx+=$cos_approx
+//status $Xrawrotation,$Xrotation,$cos_approx,powerX:$powerX 1
+
+
+//reset variables
+//varsTemporary for calculation
+cos_approx_y=1
+powerY=0
+Base*=0
+a*=0
+b*=0
+n*=0
+//Doesn't work below
+
+Yrotation*=0.0174533  // Approximation of pi/180
+Base+=$Yrotation
+powerY+=$Base
+powerY*=$Base //x^2
+a+=$powerY
+a/=2
+cos_approx_y-=$a
+
+powerY*=$Base
+powerY*=$Base //x^4
+b+=$powerY
+b/=24
+cos_approx_y+=$b
+
+
+powerY*=$Base
+powerY*=$Base //x^6
+n+=$powerY
+n/=720
+cos_approx_y-=$n //This is the cosine approximation of Rotation X
+y_cos_approx_y+=$cos_approx_y
+
+
+//Yrotation*=180
+//Yrotation/=3.14
+
+//status $Yrawrotation,$Yrotation,$cos_approx_y,powerY:$powerY 1

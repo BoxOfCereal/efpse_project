@@ -1,0 +1,11 @@
+//
+//light
+//light create [tileX] [tileY] [tileZ] [radius] [r] [g] [b] - creates a light source at tile coordinates (as shown in map editor) with your own preferences. Color values are 0-255
+//light move [tileX] [tileY] [tileZ] [offsetX] [offsetY] [offsetZ] - shifts any light source.
+//light status [on/off] [tileX] [tileY] [tileZ] - turns on/off any light source.
+//0-63,0-63,0-9
+light create 31 34 3 512 255 255 255
+light status on 31 34 3
+//light move 31 34 3 0 0 0
+
+map quickreturn keepsounds3

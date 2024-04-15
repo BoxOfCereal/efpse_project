@@ -1,0 +1,8 @@
+map.r = 0
+map.g = 90
+map.b = $map.g += 180
+//map.g *= 180
+text "map.g $map.g map.b $map.b" 255 255 255
+pause
+
+map start

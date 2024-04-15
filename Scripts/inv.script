@@ -1,0 +1,20 @@
+//image b Sprites/button0.png
+//procedure exit
+//map return
+//end
+
+
+if $global.inv_open == 1 {
+global.inv_open = 0
+map return
+} else {
+global.inv_open = 1
+vn 1
+text $global.hp
+text $global.coins
+text $global.mp
+cursor 1
+//button button 200 200 exit
+}
+
+

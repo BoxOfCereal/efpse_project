@@ -1,0 +1,26 @@
+
+//frame 1 0.25 0 0 0 MODELTEXTURE path [name]
+image swordout 0 9
+
+sound slash0
+
+state IDLE NONE 0
+frame 1 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 READY
+
+state ATTACK IDLE 0
+frame 2 .125 0 0 0 NONE
+frame 3 .125 0 0 0 SOUNDANDATTACK 0
+frame 4 .125 0 0 0 NONE
+frame 5 .125 0 0 0 READY
+frame 6 .125 0 0 0 NONE
+frame 7 .125 0 0 0 NONE
+frame 1 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 NONE
+
+state RELOAD IDLE 0
+frame 1 0 0 0 0 NONE
+frame 1 0.1 0 0 0 NONE
+frame 1 0.1 0 200 0 NONE
+frame 1 0.1 0 200 0 RELOAD
+frame 1 0.1 0 0 0 SOUND 1

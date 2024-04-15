@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Image Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-row-gap: 10px;
+    }
+
+    h1,
+    h2,
+    p {
+      text-align: center;
+    }
+
+    label {
+      grid-column: 1;
+      margin-bottom: 5px;
+    }
+
+    input[type="file"],
+    input[type="text"],
+    select,
+    input[type="range"] {
+      grid-column: 2;
+      width: calc(100% - 10px);
+      background-color: #333;
+      color: #ffffff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-container label {
+      margin-right: 10px;
+    }
+
+    .input-box {
+      width: 40px;
+      margin-left: 5px;
+      border: none;
+      background-color: #333;
+      color: #ffffff;
+      padding: 5px;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      grid-column: 1 / span 2;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #preview {
+      grid-column: 1 / span 2;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #preview img {
+      max-width: 100%;
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+      /* Center horizontally */
+      align-items: center;
+      /* Center vertically */
+      height: 200px;
+      /* Set container height to full viewport height */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Button Image Generator</h1>
+  <h2>Generate an image with a button</h2>
+  <p>Upload an image that you want to be the background of your button. Write what text and choose a font that you want.
+    Click generate and use the sliders to adjust accordingly.</p>
+  <p>A generated image will be displayed below That looks something like:</p>
+  <div class="img-container">
+    <img src="btnexample.png" alt="" srcset="" class="">  
+  </div>
+
+  <div class="container">
+    <label for="bgImageInput">Background Image:</label>
+    <input type="file" id="bgImageInput" accept="image/*">
+
+    <label for="textInput">Text:</label>
+    <input type="text" id="textInput" placeholder="Enter text">
+
+    <label for="fontSelect">Font:</label>
+    <select id="fontSelect">
+      <option value="MorrisRomanAlternate-Black">MorrisRomanAlternate-Black</option>
+      <option value="CaslonAntique">CaslonAntique</option>
+      <option value="NotJamBlackletter16">NotJamBlackletter16</option>
+      <option value="Arial">Arial</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <!-- Add more font options -->
+    </select>
+
+    <div class="slider-container">
+      <label for="fontSize">Font Size:</label>
+      <input type="range" id="fontSize" min="10" max="50" value="20">
+      <input type="text" id="fontSizeBox" class="input-box" readonly>
+    </div>
+
+    <div class="slider-container">
+      <label for="textX">Text X Position:</label>
+      <input type="range" id="textX" min="0" max="100" value="50">
+      <input type="text" id="textXBox" class="input-box" readonly>
+    </div>
+
+    <div class="slider-container">
+      <label for="textY">Text Y Position:</label>
+      <input type="range" id="textY" min="0" max="100" value="50">
+      <input type="text" id="textYBox" class="input-box" readonly>
+    </div>
+
+    <button id="generateButton">Generate Images</button>
+
+    <div id="preview"></div>
+  </div>
+
+  <script>
+    // Define font faces
+    const fontFaces = [
+      {
+        name: 'MorrisRomanAlternate-Black',
+        url: 'url(./MorrisRomanAlternate-Black.ttf)',
+      },
+      {
+        name: 'CaslonAntique',
+        url: 'url(./CaslonAntique.ttf)',
+      },
+      {
+        name: 'NotJamBlackletter16',
+        url: 'url(./NotJamBlackletter16.ttf)',
+      },
+    ];
+
+    // Load fonts dynamically
+    fontFaces.forEach(font => {
+      const newFont = new FontFace(font.name, font.url);
+      newFont.load().then(loadedFont => {
+        document.fonts.add(loadedFont);
+      }).catch(error => {
+        console.error('Font loading failed:', error);
+      });
+    });
+
+    const fontSizeSlider = document.getElementById('fontSize');
+    const textXSlider = document.getElementById('textX');
+    const textYSlider = document.getElementById('textY');
+    const fontSizeBox = document.getElementById('fontSizeBox');
+    const textXBox = document.getElementById('textXBox');
+    const textYBox = document.getElementById('textYBox');
+
+    // Populate input boxes with initial values
+    fontSizeBox.value = fontSizeSlider.value;
+    textXBox.value = textXSlider.value;
+    textYBox.value = textYSlider.value;
+
+    fontSizeSlider.addEventListener('input', updateFontSize);
+    textXSlider.addEventListener('input', updateTextX);
+    textYSlider.addEventListener('input', updateTextY);
+
+    function updateFontSize() {
+      fontSizeBox.value = fontSizeSlider.value;
+    }
+
+    function updateTextX() {
+      textXBox.value = textXSlider.value;
+    }
+
+    function updateTextY() {
+      textYBox.value = textYSlider.value;
+    }
+
+    document.getElementById('generateButton').addEventListener('click', generateImages);
+
+    function generateImages() {
+      const bgImageInput = document.getElementById('bgImageInput');
+      const textInput = document.getElementById('textInput').value;
+      const fontSelect = document.getElementById('fontSelect').value;
+      const fontSize = fontSizeSlider.value;
+      const textX = textXSlider.value;
+      const textY = textYSlider.value;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = new Image();
+        img.onload = function () {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width * 3; // Three copies of the image
+          canvas.height = img.height;
+
+          const ctx = canvas.getContext('2d');
+
+          // Draw original image
+          ctx.drawImage(img, 0, 0, img.width, img.height);
+          ctx.drawImage(img, img.width, 0, img.width, img.height);
+          ctx.drawImage(img, 2 * img.width, 0, img.width, img.height);
+
+          // Set text style
+          ctx.font = 'bold ' + fontSize + 'px ' + fontSelect;
+          ctx.textAlign = 'center';
+
+          // Draw text (original)
+          ctx.fillStyle = 'black';
+          ctx.fillText(textInput, img.width * (textX / 100), img.height * (textY / 100));
+
+          // Draw text (highlighted)
+          ctx.fillStyle = 'yellow';
+          ctx.fillText(textInput, img.width + img.width * (textX / 100), img.height * (textY / 100));
+
+          // Draw text (darkened)
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+          ctx.fillText(textInput, 2 * img.width + img.width * (textX / 100), img.height * (textY / 100));
+
+          // Display preview
+          const preview = document.getElementById('preview');
+          preview.innerHTML = '';
+          const previewImg = new Image();
+          previewImg.src = canvas.toDataURL();
+          preview.appendChild(previewImg);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(bgImageInput.files[0]);
+    }
+  </script>
+</body>
+
+</html>

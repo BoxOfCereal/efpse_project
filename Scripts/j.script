@@ -1,0 +1,5 @@
+vn 1
+text "That was my only friend." 255 255 255
+//button [imageName] [x] [y] [procedurename]
+vn 0
+map return

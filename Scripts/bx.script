@@ -1,0 +1,5 @@
+vn 1
+text "Attack the chest to open it!"
+//button [imageName] [x] [y] [procedurename]
+vn 0
+map return

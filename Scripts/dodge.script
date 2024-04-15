@@ -1,0 +1,27 @@
+t=0
+//player move [offsetX] [offsetY] [offsetZ]
+//player check position [varX] [varY] [varZ]
+//sets variable x/y/z to the player's current position.
+
+//global.lastX=0
+//global.lastY=0
+//global.lastZ=0
+
+//player check position global.currentX global.currentY global.currentZ
+
+//global.cooldownTimer=10
+//global.elapsedTime=0
+
+//procedure calculateDirection
+//deltaX=$currentX-$global.lastX
+//deltaY=$currentY-$global.lastY
+//deltaZ=$currentZ-$global.lastZ
+
+//player move 5 0 0
+//entity move [tileX] [tileY] [tileZ] [offsetX] [offsetY] [offsetZ] - shifts entity.
+//entity spawnat [enemyname/decorationname/Key1-3/Hp1-3] [tileX] [tileY] [tileZ] - creates entity at tile coordinates (as shown in map editor).
+if $value == 1 {
+
+
+entity move 14 6 0 64 0 0
+map quickreturn keepsounds2

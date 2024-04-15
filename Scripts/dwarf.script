@@ -1,0 +1,17 @@
+image dwarf Sprites/Decorations/elf/elf.png
+image player Sprites/Player/player.png
+sound welcome Sounds/male_hello0.wav
+//show [imageName] [x] [y] [time] - shows image within set time. imageName is the name that was set to an image when loading. If time is 0 or omitted then image will be shown immediately.
+
+vn 1
+show player 25 10 0
+show elf 825 10 0
+font 32
+play sound welcome
+text "DWARF: If you've never scraped dried**** off your a R S E With two chipped rubies..." 0 0 0
+font 24
+text "HERO: " 0 0 0
+
+//button [imageName] [x] [y] [procedurename]
+vn 0
+map return

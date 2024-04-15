@@ -1,0 +1,46 @@
+global.player.hp = 100
+global.player.max_hp = 100
+global.player.mp = 50
+global.player.max_mp = 50
+global.player.coins = 0
+global.player.str = 10
+global.player.dex = 10
+global.player.int = 10
+global.player.lvl = 1
+global.player.exp = 0
+global.player.cur_exp = 0
+global.player.next_lv_exp_to_l = 100
+
+// Player position
+global.player.currentX = 0
+global.player.currentY = 0
+global.player.currentZ = 0
+global.player.lastX = 0
+global.player.lastY = 0
+global.player.lastZ = 0
+global.player.angleX = 0
+global.player.angleY = 0
+
+// Target position
+global.player.targetX = 0
+global.player.targetY = 0
+global.player.targetZ = 0
+global.player.targetLastX = 0
+global.player.targetLastY = 0
+global.player.targetLastZ = 0
+
+global.time = 10
+global.pi=3.14
+
+// Display player-related variables
+//text $global.player.currentX 255 255 255
+
+
+// mission related variables
+global.elf_mission = 0
+
+//Other variables needed to get this hacky language to work
+global.i = 0
+
+// Start the game
+map goto 1

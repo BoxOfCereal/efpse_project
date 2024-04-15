@@ -1,0 +1,15 @@
+
+image cow 0 3
+
+state IDLE NONE 0
+frame 0 0.25 0 0 0 NONE
+frame 0 0.25 0 0 0 READY
+
+state DEATH DEAD 0
+frame 1 0.166 0 0 0 NONE
+frame 2 0.166 0 0 0 NONE
+frame 3 0.166 0 0 0 NONE
+
+state DEAD NONE 0
+frame 3 0.25 0 0 0 NONE
+frame 3 0.25 0 0 0 NONE

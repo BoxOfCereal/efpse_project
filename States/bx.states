@@ -1,0 +1,16 @@
+image chest 0 1
+image gold 0 5
+
+state IDLE NONE 0
+frame 1 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 READY
+
+state DEATH DEAD 0
+frame 1 0.01 0 0 0 NONE
+frame 1 0.01 0 0 0 PARTICLES gold 3,5,0,32,16 0,128,0
+frame 1 0.01 0 0 0 NONE
+frame 1 0.01 0 0 0 SPAWN Hp2 0,0,32 5,50
+
+state DEAD NONE 0
+frame 0 0.25 0 0 0 NONE
+frame 0 0.25 0 0 0 NONE

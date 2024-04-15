@@ -1,0 +1,39 @@
+global.hp = 100
+global.mp = 50
+global.coins = 0
+global.str = 10
+global.dex = 10
+global.int = 10
+global.lvl = 1
+global.exp = 0
+global.cur_exp = 0
+global.next_lv_exp_to_l = 100
+
+// Player position
+global.player.currentX = 0
+global.player.currentY = 0
+global.player.currentZ = 0
+global.player.lastX = 0
+global.player.lastY = 0
+global.player.lastZ = 0
+
+// Target position
+global.player.targetX = 0
+global.player.targetY = 0
+global.player.targetZ = 0
+global.player.targetLastX = 0
+global.player.targetLastY = 0
+global.player.targetLastZ = 0
+
+global.time = 10
+global.pi=3.14
+
+// Display player-related variables
+text $global.player.currentX 255 255 255
+// NPC coordinates
+map.jx = 14
+map.jy = 6
+map.jz = 0
+
+// Start the game
+map start

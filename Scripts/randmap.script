@@ -1,0 +1,7 @@
+value=1
+
+if $value == 1 {
+map next
+} else {
+map goto 3
+}

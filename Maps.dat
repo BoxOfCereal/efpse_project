@@ -1,0 +1,340 @@
+setup.eem
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 1000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 0
+test.map
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 1000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 2
+town.eem
+None
+None
+jump_pad.script
+None
+None
+None
+None
+None
+None
+None
+None
+None
+ltbl
+None
+None
+None
+None
+None
+None
+None
+None
+None
+vz_clear_right.png 2
+255 255 142
+255 255 255 20000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 3
+entrance.eem
+entrance.ogg
+None
+jump_pad.script
+None
+None
+None
+None
+None
+None
+None
+None
+None
+d01
+entrance_ shop_door
+None
+None
+None
+None
+None
+None
+None
+None
+vz_apocalypse_back.png 2
+150 150 69
+0 0 0 3000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 0
+door.eem
+door.ogg
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+randmap
+None
+None
+None
+None
+None
+None
+None
+None
+None
+vz_classic_land_left.png 2
+255 255 174
+255 255 255 10000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 1
+dungeon1.eem
+None
+None
+d01.script
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 1000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 3
+genkan.eem
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+d01
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 450
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 0
+tomb.eem
+tomb1.ogg
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 300
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 0
+room1.eem
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 1000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 0
+dungeon2.eem
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 1000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+0 None None None None 1

@@ -1,0 +1,36 @@
+procedure helloworld
+text "Hello World!"
+end;
+procedure bye
+text "bye World!"
+hide btn
+end
+
+
+image elf Sprites/Decorations/elf/elf.png
+image player Sprites/Player/player.png
+image btn Menu/skipbutton.png
+image back Menu/back.png
+sound welcome Sounds/female_hello1.wav
+//show [imageName] [x] [y] [time] - shows image within set time. imageName is the name that was set to an image when loading. If time is 0 or omitted then image will be shown immediately.
+
+vn 1
+bg back
+show player 25 10 0
+show elf 825 10 0
+play sound welcome
+font 32
+text "ELF: Just when I thought this was a clean town,A dwarf shows up." 0 0 0
+font 24
+text "HERO: Elven women are known for their grace." 0 0 0
+auto 1
+text " " 0 0 0
+auto 0
+button btn 200 250 helloworld
+button btn 400 250 bye
+pause
+//hide btn
+text "bye bye" 0 0 0
+//button [imageName] [x] [y] [procedurename]
+vn 0
+map return

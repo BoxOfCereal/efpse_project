@@ -1,0 +1,50 @@
+procedure journal
+
+if $global.journal_open == 1 {
+global.journal_open = 0
+map quickreturn keepsounds2
+} else {
+global.journal_open = 1
+vn 1
+
+image journal_bg Sprites/journal/bg.png
+image blank Sprites/journal/blank.png
+
+bg journal_bg 0
+label blank 512 30 "JOURNAL"
+label blank 100 100 "LEVEL"
+label blank 150 100 $global.player.lvl //size r g b [center/left/right]
+label blank 100 150 "EXP TO NEXT LEVEL"
+label blank 250 150 $global.player.next_lv_exp_to_l //size r g b [center/left/right]
+label blank 100 200 "CUR EXP"
+label blank 250 200 $global.player.cur_exp //size r g b [center/left/right]
+label blank 100 250 "EXP"
+label blank 250 250 $global.player.exp //size r g b [center/left/right]
+label blank 100 300 "HP"
+label blank 250 300 $global.player.hp //size r g b [center/left/right]
+label blank 100 350 "Max HP"
+label blank 250 350 $global.player.max_hp //size r g b [center/left/right]
+label blank 100 30 "MP"
+label blank 150 110 $global.player.mp //size r g b [center/left/right]
+label blank 100 30 "Max MP"
+label blank 250 110 $global.player.max_mp //size r g b [center/left/right]
+
+label blank 100 30 "COINS"
+label blank 100 70 $global.player.coins //size r g b [center/left/right]
+
+//label blank 100 50 $global.coins //size r g b [center/left/right]
+//label blank 100 100 $global.mp //size r g b [center/left/right]
+
+pause
+//image [name] [path] - loads an image and sets it's name. 
+//Path may be anything in scope of your project folder 
+//(omit ProjectName/ part. For example "Images/Image.png" will tell engine to look into "ProjectName/Images/Image.png") 
+cursor 1
+//button button 200 200 exit
+}
+
+
+
+map quickreturn keepsounds2
+end; //semicolon in necessary if you have more than one procedure 
+call journal

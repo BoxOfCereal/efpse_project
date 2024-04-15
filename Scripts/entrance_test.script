@@ -1,0 +1,16 @@
+player check position global.currentX global.currentY global.currentZ
+player check position global.lastX global.lastY global.lastZ
+//player check rotation [varX] [varY] 
+player check rotation global.rotX global.rotY
+$map.t+= 1//My attempt at the game timer the engine does not like
+
+status x:$global.currentX,y:$global.currentY,z:$global.currentZ\nrotX:$global.rotX,rotY:$global.rotY,t:$global.t 1
+
+// entity move [tileX] [tileY] [tileZ] [offsetX] [offsetY] [offsetZ] - shifts entity. 
+//j 
+
+jxOffset = $map.jx + $map.t
+jyOffset = $map.jy + $map.t
+//jzOffset = jz
+
+entity move $jx $jy $jz $jxOffset $jyOffset 0//[offsetZ]

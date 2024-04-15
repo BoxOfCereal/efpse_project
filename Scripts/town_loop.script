@@ -1,0 +1,8 @@
+player check position global.player.currentX global.player.currentY global.player.currentZ
+player check position global.lastX global.lastY global.lastZ
+//player check rotation [varX] [varY] 
+player check rotation global.rotX global.rotY
+//$map.t+= 1//My attempt at the game timer the engine does not like
+
+//x:$global.player.currentX,y:$global.player.currentY,z:$global.player.currentZ\nrotX:$global.rotX,rotY:$global.rotY 1
+status $global.elf_mission 1

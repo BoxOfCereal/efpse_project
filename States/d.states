@@ -1,0 +1,43 @@
+image hound 0 12
+sound bark0
+sound bark1
+sound bark2
+
+state IDLE NONE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 SETVAR map.dogIsAlive 1
+frame 0 120 0 0 0 NONE
+
+frame 0 0.125 0 0 0 READY
+
+state SEE CHASE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 READY
+
+state CHASE NONE 0
+frame 1 1 0 0 0 NONE
+frame 2 1 0 0 0 NONE
+frame 3 1 0 0 0 NONE
+frame 4 1 0 0 0 READY
+
+state ATTACK CHASE 0
+frame 5 0.25 0 0 0 NONE
+frame 5 0.25 0 0 0 SETVAR n RANDOM(0,2)
+frame 5 1 0 0 0 NONE
+frame 6 0.0625 0 0 0 SOUND $n
+frame 6 0.0625 0 0 0 ATTACK
+frame 5 0.25 0 0 0 NONE
+frame 5 0.25 0 0 0 READY
+
+state HURT CHASE 0
+frame 7 0.125 0 0 0 NONE
+frame 8 0.125 0 0 0 NONE
+
+state DEATH DEAD 0
+frame 9 0.166 0 0 0 NONE
+frame 10 0.166 0 0 0 NONE
+frame 11 0.166 0 0 0 NONE
+
+state DEAD NONE 0
+frame 12 0.125 0 0 0 NONE
+frame 12 0.125 0 0 0 NONE

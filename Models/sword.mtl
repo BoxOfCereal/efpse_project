@@ -1,0 +1,12 @@
+# Made in Blockbench 4.9.4
+newmtl m_0f146cdc-74fb-ba40-5181-d242a563f44b
+map_Kd sigil_cross.png
+newmtl m_32cbb350-f76c-0086-ad91-e992f251fd10
+map_Kd sigil_rhombus.png
+newmtl m_628cb656-443e-165f-09cd-a08d8ee6239c
+map_Kd sigil_circle.png
+newmtl m_3fdc05e0-a514-484f-2ca3-669326bbb094
+map_Kd sigil_curve_south_east.png
+newmtl m_ea895fd8-4675-a869-31a2-c10fa6079d07
+map_Kd bars_red_4.png
+newmtl none
