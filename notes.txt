@@ -122,6 +122,7 @@ frame 5 2 0 0 0 READY
 //|
 state ALTATTACK CHASE 0
 frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 READY
 frame 0 0.125 0 0 0 NONE
 frame 0 0.125 0 0 0 NONE
 frame 0 0.125 0 0 0 NONE
@@ -129,9 +130,12 @@ frame 0 0.125 0 0 0 NONE
 frame 0 0.125 0 0 0 NONE
 frame 0 0.125 0 0 0 NONE
 frame 0 0.125 0 0 0 SOUND 1
-frame 0 0.125 0 0 0 READY
 frame 0 0.125 0 0 0 PROJECTILE 0 0 0
 frame 0 0.125 0 0 0 PROJECTILE 0 0 1
 frame 0 0.125 0 0 0 PROJECTILE 0 0 2
 frame 0 0.125 0 0 0 NONE
 frame 0 0.125 0 0 0 NONE
+
+
+player move [offsetX] [offsetY] [offsetZ] 
+All I have to do is normalize the current XYZ coordinates and then I'll get a direction vector

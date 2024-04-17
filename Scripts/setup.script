@@ -11,23 +11,45 @@ global.player.exp = 0
 global.player.cur_exp = 0
 global.player.next_lv_exp_to_l = 100
 
-// Player position
-global.player.currentX = 0
-global.player.currentY = 0
-global.player.currentZ = 0
-global.player.lastX = 0
-global.player.lastY = 0
-global.player.lastZ = 0
-global.player.angleX = 0
-global.player.angleY = 0
+global.player.luck = 1
+global.player.dodge = 1
+global.player.stealth = 1
 
-// Target position
-global.player.targetX = 0
-global.player.targetY = 0
-global.player.targetZ = 0
-global.player.targetLastX = 0
-global.player.targetLastY = 0
-global.player.targetLastZ = 0
+// states
+global.playerIsSneaking = 0
+global.pStatePushBack = 0
+global.pStateSlowed = 0
+global.pStateQuickend = 0
+global.pStateStunned = 0
+global.pStateDazed = 0
+global.pStateParalyzed = 0
+global.pStateStaggered = 0
+global.pStateFrozen = 0
+global.pStateBurning = 0
+global.pStatePoisoned = 0
+global.pStateCursed = 0
+global.pStateDiseased = 0
+global.pStateConfused = 0
+global.pStateInvisible = 0
+
+//test
+global.lastX = 0
+global.lastY = 0
+global.lastZ = 0
+global.playerX = 0
+global.playerY = 0
+global.playerZ = 0
+global.playerNormX = 0
+global.playerNormY = 0
+global.playerNormZ = 0
+
+
+// Variables for functions
+global.arg0 = 0
+global.arg1 = 0
+global.arg2 = 0
+global.funcResult = 0
+
 
 global.time = 10
 global.pi=3.14

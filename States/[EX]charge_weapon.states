@@ -1,30 +1,39 @@
 image Weapon 0 7
-sound WeaponFire
-sound WeaponReload
+sound WeaponFire0
+sound WeaponFire0
+sound WeaponFire0
+sound WeaponFire0
+sound WeaponCharge0
+sound WeaponCharge1
+sound WeaponCharge2
+sound WeaponCharge3
+sound WeaponChargeRelease
+sound WeaponOutOfAmmo
+sound WeaponOutOfAmmo2
 
 state IDLE NONE 0
 frame 1 0.25 0 0 0 NONE
-frame 1 0.25 0 0 0 SETVAR global.weapon 1
-frame 1 0.25 0 0 0 SETVAR charge 0
-frame 1 0.25 0 0 0 SETAMMO $charge
+frame 1 0.25 0 0 0 INCREMENT gas 1
 frame 1 0.25 0 0 0 READY
 
-state ATTACK RELEASE 0
+state ALTATTACK RELEASE 0
 frame 2 .125 0 0 0 NONE
 frame 1 .125 0 0 0 INCREMENT charge 5
 frame 1 0.25 0 0 0 SETAMMO $charge
 frame 3 .125 0 0 0 NONE
 
-state RELEASE IDLE 0
+state RELEASE COOLDOWN 0
 frame 2 0.25 0 0 0 NONE
 frame 2 0.25 0 0 0 SETSTAT damage $charge
 frame 3 0.25 0 0 0 DIVIDE charge 2
+frame 3 0.25 0 0 0 SETVAR cooloff $charge
 frame 3 0.25 0 0 0 SETSTAT recoil $charge
 frame 3 0.25 0 0 0 SOUNDANDATTACK 0
 frame 4 0.25 0 0 0 MUZZLEFLASH
 frame 3 0.25 0 0 0 SETAMMO 0
 frame 1 0.25 0 0 0 SETVAR charge 0
-frame 1 0.25 0 0 0 READY
+frame 1 0.25 0 0 0 SETSTAT recoil 0
+frame 1 0.25 0 0 0 NONE
 
 state RELOAD IDLE 0
 frame 1 0.1 0 0 0 NONE
@@ -33,14 +42,37 @@ frame 1 0.1 0 200 0 NONE
 frame 1 0.1 0 200 0 RELOAD
 frame 1 0.1 0 0 0 SOUND 1
 
-state ALTATTACK IDLE 0
-frame 1 0.1 0 0 0 NONE
-frame 1 0.1 0 0 0 NONE
-frame 1 0.1 0 200 0 NONE
-frame 1 0.1 0 200 0 RELOAD
-frame 1 0.1 0 0 0 SOUND 1
+state ATTACK IDLE 0
+frame 1 0.01 0 0 0 NONE
+frame 1 0.01 0 0 0 DECREMENT gas 1
+frame 1 0.01 0 0 0 CLAMP gas 0 100
+frame 1 0.01 0 0 0 JUMPIFEQUALS gas 0 OOA
+frame 1 0.01 0 0 0 SOUNDANDATTACK 0
+frame 1 0.01 0 0 0 READY
+frame 1 0.01 0 0 0 NONE
+
+state OOA IDLE 0
+frame 1 0.05 0 0 0 NONE
+frame 1 0.05 0 0 0 SOUND 9
+frame 1 0.05 0 0 0 NONE
+
+state COOLDOWN REFRESH 0
+frame 1 0.5 0 0 0 NONE
+frame 1 0.5 0 0 0 DECREMENT cooloff 1
+frame 1 0.5 0 0 0 CLAMP cooloff 0 100
+frame 1 0.5 0 0 0 JUMPIFEQUALS cooloff 0 READY
+
+state REFRESH IDLE 0
+frame 1 0.5 0 0 0 NONE
+frame 1 0.5 0 0 0 READY
 
 state DRAW IDLE 0
 frame 1 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 SETVAR global.weapon 1
+frame 1 0.25 0 0 0 SETVAR gas 100
+frame 1 0.25 0 0 0 SETAMMO $gas
+frame 1 0.25 0 0 0 SETVAR charge 0
+frame 1 0.25 0 0 0 SETAMMO $charge
+frame 1 0.25 0 0 0 SETVAR cooloff 0
 frame 1 0.25 0 0 0 READY
 frame 1 0.25 0 0 0 NONE
