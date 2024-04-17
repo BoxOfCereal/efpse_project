@@ -1,0 +1,7 @@
+image test 0 18
+
+state IDLE NONE 0
+frame 0 2 0 0 0 NONE
+frame 1 2 0 0 0 NONE
+frame 4 2 0 0 0 PARTICLES 1 10,3000,0,0,1 0,0,1
+frame 5 2 0 0 0 READY

@@ -1,0 +1,24 @@
+image cat 0 3
+image flea
+sound meow
+sound bell
+
+state IDLE NONE 0
+frame 0 2 0 0 0 NONE
+frame 0 2 0 0 0 SOUND 0
+frame 0 2 0 0 0 READY
+
+state FLEASCRATCH IDLE 0
+frame 1 2 0 0 0 NONE
+frame 1 2 0 0 0 PARTICLES 4 1,3000,0,64,0 0,64,0
+frame 1 2 0 0 0 NONE
+
+state DEATH DEAD 0
+frame 2 0.166 0 0 0 NONE
+frame 2 0.166 0 0 0 SOUND 1
+frame 2 0.166 0 0 0 NONE
+
+state DEAD NONE 0
+frame 3 0.25 0 0 0 NONE
+frame 3 0.25 0 0 0 NONE
+

@@ -241,3 +241,5 @@ tile ground_32_slope_UL
 cornerslope 0 0 0 32 -32 -32 32 -32 32 32
 tile ground_32_slope_UR
 cornerslope 0 0 0 32 -32 32 -32 -32 32 -32
+tile test1
+polygon 0 0 0 64 -32 -32 32 -32 32 32 -32 32

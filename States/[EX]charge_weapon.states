@@ -1,0 +1,46 @@
+image Weapon 0 7
+sound WeaponFire
+sound WeaponReload
+
+state IDLE NONE 0
+frame 1 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 SETVAR global.weapon 1
+frame 1 0.25 0 0 0 SETVAR charge 0
+frame 1 0.25 0 0 0 SETAMMO $charge
+frame 1 0.25 0 0 0 READY
+
+state ATTACK RELEASE 0
+frame 2 .125 0 0 0 NONE
+frame 1 .125 0 0 0 INCREMENT charge 5
+frame 1 0.25 0 0 0 SETAMMO $charge
+frame 3 .125 0 0 0 NONE
+
+state RELEASE IDLE 0
+frame 2 0.25 0 0 0 NONE
+frame 2 0.25 0 0 0 SETSTAT damage $charge
+frame 3 0.25 0 0 0 DIVIDE charge 2
+frame 3 0.25 0 0 0 SETSTAT recoil $charge
+frame 3 0.25 0 0 0 SOUNDANDATTACK 0
+frame 4 0.25 0 0 0 MUZZLEFLASH
+frame 3 0.25 0 0 0 SETAMMO 0
+frame 1 0.25 0 0 0 SETVAR charge 0
+frame 1 0.25 0 0 0 READY
+
+state RELOAD IDLE 0
+frame 1 0.1 0 0 0 NONE
+frame 1 0.1 0 0 0 NONE
+frame 1 0.1 0 200 0 NONE
+frame 1 0.1 0 200 0 RELOAD
+frame 1 0.1 0 0 0 SOUND 1
+
+state ALTATTACK IDLE 0
+frame 1 0.1 0 0 0 NONE
+frame 1 0.1 0 0 0 NONE
+frame 1 0.1 0 200 0 NONE
+frame 1 0.1 0 200 0 RELOAD
+frame 1 0.1 0 0 0 SOUND 1
+
+state DRAW IDLE 0
+frame 1 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 READY
+frame 1 0.25 0 0 0 NONE

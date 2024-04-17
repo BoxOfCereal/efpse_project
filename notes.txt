@@ -24,3 +24,114 @@ TransformedVector = TranslationMatrix * RotationMatrix * ScaleMatrix * OriginalV
 [10:15 AM]Method: Use _
 
 Add circle of protection
+
+IDLE,5
+CHASE,4
+HURT,4
+DEATH,4
+DEAD,2
+
+
+
+state HURT IDLE 0
+frame 9 0.125 0 0 0 NONE
+frame 10 0.125 0 0 0 NONE
+frame 11 0.125 0 0 0 NONE
+frame 12 0.125 0 0 0 NONE
+
+state CHASE NONE 0
+frame 5 1 0 0 0 NONE
+frame 6 1 0 0 0 NONE
+frame 7 1 0 0 0 NONE
+frame 8 1 0 0 0 READY
+
+state DEATH DEAD 0
+frame 13 0.166 0 0 0 NONE
+frame 14 0.166 0 0 0 NONE
+frame 15 0.166 0 0 0 NONE
+frame 16 0.166 0 0 0 NONE
+
+state DEAD NONE 0
+frame 17 0.25 0 0 0 NONE
+frame 18 0.25 0 0 0 NONE
+SETVAR map.chase RANDOM(0,1)
+JUMPIFEQUALS map.chase 0 IDLE
+JUMPIFEQUALS map.chase 1 CHASE
+
+
+state IDLE CHASE 0
+frame 0 .25 0 0 0 NONE
+frame 1 .25 0 0 0 READY
+frame 2 .25 0 0 0 NONE
+frame 3 .25 0 0 0 NONE
+frame 4 .25 0 0 0 NONE
+
+state CHASE PARTY 0
+frame 5 1 0 0 0 SETVAR map.test_chase 1
+frame 6 1 0 0 0 NONE
+frame 7 1 0 0 0 SETVAR map.test_chase 0
+frame 8 1 0 0 0 READY
+
+frame 4 2 0 0 0 PARTICLES 1 10 0,0,1 0,0,1
+
+## Thanks
+[9:11 AM]mr_axebane: I think the particles line should be more like:   "frame 4 2 0 0 0 PARTICLES 1 10,3000,0,0,1 0,0,1"
+[9:11 AM]mr_axebane: because after the Imageindex the PARTICLES command is expecting 8 values
+
+
+With the help of mr_axebane I have been able to get particles working on a decoration.
+
+EX:
+```STATES
+image test 0 18
+image gold2
+
+state IDLE NONE 0
+frame 0 2 0 0 0 NONE
+frame 1 2 0 0 0 NONE
+frame 4 2 0 0 0 PARTICLES 19 10,3000,0,0,1 0,0,1
+frame 5 2 0 0 0 READY
+```
+//19 because we loaded 18 images from test and one more image onto the stack with gold2
+
+
+//Doesn't work
+
+image test 0 18
+image gold2
+
+state IDLE NONE 0
+frame 0 .25 0 0 0 NONE
+frame 1 .25 0 0 0 NONE
+frame 1 .25 0 0 0 NONE
+frame 1 .25 0 0 0 NONE
+frame 0 0.025 0 0 0 SETVAR x1 RANDOM(0,3)
+frame 0 0.025 0 0 0 SETVAR x2 RANDOM(0,3)
+frame 0 0.025 0 0 0 SETVAR x3 RANDOM(0,3)
+frame 0 0.025 0 0 0 SETVAR z1 RANDOM(0,3)
+frame 0 0.025 0 0 0 SETVAR z2 RANDOM(0,3)
+frame 0 0.025 0 0 0 SETVAR z3 RANDOM(0,3)
+frame 4 2 0 0 0 PARTICLES 19 1,3000,$x1,64,$z1 0,-3,0
+frame 4 2 0 0 0 PARTICLES 19 1,3000,$x2,64,$z2 0,-3,0
+frame 4 2 0 0 0 PARTICLES 19 1,3000,$x3,64,$z3 0,-3,0
+frame 5 2 0 0 0 READY
+
+
+//|
+//|
+//|
+state ALTATTACK CHASE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 SOUND 1
+frame 0 0.125 0 0 0 READY
+frame 0 0.125 0 0 0 PROJECTILE 0 0 0
+frame 0 0.125 0 0 0 PROJECTILE 0 0 1
+frame 0 0.125 0 0 0 PROJECTILE 0 0 2
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE

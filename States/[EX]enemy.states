@@ -1,0 +1,129 @@
+image enemy 0 39
+image blood 0 33
+sound discover
+sound attack
+sound death
+sound hurt
+sound idleanimation
+sound rareanimation
+
+state IDLE NONE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 SETVAR map.testEnemyIsAlive 1
+frame 0 0.125 0 0 0 SETVAR q RANDOM(0,10)
+frame 0 0.125 0 0 0 SETVAR value 5
+frame 0 0.125 0 0 0 JUMPIFGREATER q $value IDLEANIMATION 
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 READY
+
+state SEE CHASE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 JUMPIFEQUALS global.playerIsSneaking 1 IDLEANIMATION
+frame 0 0.125 0 0 0 SOUND 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 READY
+
+state CHASE NONE 0
+frame 1 1 0 0 0 NONE
+frame 2 1 0 0 0 NONE
+frame 3 1 0 0 0 NONE
+frame 4 1 0 0 0 READY
+
+state ATTACK CHASE 0
+frame 5 0.25 0 0 0 NONE
+frame 5 0.25 0 0 0 NONE
+frame 6 0.0625 0 0 0 NONE
+frame 6 0.0625 0 0 0 ATTACK
+frame 5 0.25 0 0 0 NONE
+frame 5 0.25 0 0 0 READY
+
+state HURT CHASE 0
+frame 7 0.125 0 0 0 NONE
+frame 8 0.125 0 0 0 NONE
+
+state DEATH DEAD 0
+frame 9 0.166 0 0 0 NONE
+frame 10 0.166 0 0 0 NONE
+frame 11 0.166 0 0 0 SETVAR q RANDOM(0,10)
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 0 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 1 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 2 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 3 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 4 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 5 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 6 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 7 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 8 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 9 ALTDEATH
+frame 11 0.166 0 0 0 JUMPIFEQUALS q 10 ALTDEATH
+frame 11 0.166 0 0 0 NONE
+
+state DEAD NONE 0
+frame 12 0.125 0 0 0 NONE
+frame 12 0.125 0 0 0 SPAWN Hp2 0,0,32 0,32
+frame 12 0.125 0 0 0 SETVAR map.testEnemyIsAlive 0
+frame 12 0.125 0 0 0 NONE
+
+state IDLEANIMATION IDLE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 SETVAR map.testEnemyIsAlive 1
+frame 0 0.125 0 0 0 SETVAR q RANDOM(0,10)
+frame 0 0.125 0 0 0 SETVAR value 5
+frame 0 0.125 0 0 0 JUMPIFLESS q $value RAREANIMATION 
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 SOUND 4
+frame 0 0.125 0 0 0 READY 
+
+state RAREANIMATION IDLE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 SETVAR map.testEnemyIsAlive 1
+frame 0 0.125 0 0 0 SETVAR q RANDOM(0,10)
+frame 0 0.125 0 0 0 SETVAR value 5
+frame 0 0.125 0 0 0 JUMPIFGREATER q $value RAREANIMATION 
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 SOUND 5
+frame 0 0.125 0 0 0 READY
+
+state ALTDEATH DEAD 0
+frame 9 0.166 0 0 0 NONE
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,16 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,32 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,48 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,16 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,32 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,48 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,16 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,32 0,64,0
+frame 10 0.166 0 0 0 PARTICLES 40 2,40,0,32,48 0,64,0
+frame 10 0.166 0 0 0 NONE
+frame 10 0.166 0 0 0 NONE
+frame 10 0.166 0 0 0 SPAWN Key1 0,0,32 16,16
+frame 11 0.166 0 0 0 NONE
+
+state ALTATTACK CHASE 0
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 READY
+frame 0 0.125 0 0 0 SOUND 1
+frame 0 0.125 0 0 0 PROJECTILE $global.dodge 0 0 $global.luck
+frame 0 0.125 0 0 0 PROJECTILE $global.dodge 0 1 $global.luck
+frame 0 0.125 0 0 0 PROJECTILE $global.dodge 0 2 $global.luck
+frame 0 0.125 0 0 0 NONE
+frame 0 0.125 0 0 0 NONE
+
+state TOTEMTRAP NONE 0
+frame 0 .25 0 0 0 NONE
+frame 0 .25 0 0 0 READY
+frame 0 .25 0 0 0 NONE
+frame 0 .25 0 0 0 SOUND 1
+frame 0 .025 0 0 0 PROJECTILE 0 1 0
+frame 0 .025 0 0 0 PROJECTILE 90 1 0
+frame 0 .025 0 0 0 PROJECTILE 180 1 0
+frame 0 .025 0 0 0 PROJECTILE 270 1 0
+frame 0 .25 0 0 0 NONE
