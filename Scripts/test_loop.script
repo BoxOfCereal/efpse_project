@@ -1,5 +1,10 @@
+//Fix me cannot use procedures in the loop scripts have to get the Babylonian square root estimation by hand below can't use loops
 //player check position [varX] [varY] [varZ] - sets variable x/y/z to the player's current position.
 player check position global.playerX global.playerY global.playerZ
+
+global.playerDeltaX*=0
+global.playerDeltaY*=0
+global.playerDeltaZ*=0
 
 global.playerNormX*=0
 global.playerNormY*=0
@@ -7,32 +12,74 @@ global.playerNormZ*=0
 
 global.playerNormX+="$global.playerX"
 global.playerNormX-=$global.lastX
+global.playerDeltaX+=$global.playerNormX//store delta
 global.playerNormX*=$global.playerNormX//Square it
 
 global.playerNormY+="$global.playerY"
 global.playerNormY-=$global.lastY
+global.playerDeltaY+=$global.playerNormY//store delta
 global.playerNormY*=$global.playerNormY//Square it
-//Fix me cannot use procedures in the loop scripts have to get the Babylonian square root estimation by hand below can't use loops
+
 global.playerNormZ+="$global.playerZ"
 global.playerNormZ-=$global.lastZ
+global.playerDeltaZ+=$global.playerNormZ//store delta
 global.playerNormZ*=$global.playerNormZ//Square it
 
 //get ||v|| = sqrt(x^2 + y^2 + z^2)
 v*=0
-v+=$global.playerNormX
-v+=$global.playerNormY
-v+=$global.playerNormZ
+v+=$global.playerNormX//x^2
+v+=$global.playerNormY//y^2
+v+=$global.playerNormZ//z^2
 //status $v 1
 
 
 //1 get guess
-avg = $global.playerX
-avg+=$global.playerY
-avg+=$global.playerZ
+avg = $global.playerNormX
+avg+=$global.playerNormY
+avg+=$global.playerNormZ
 
 avg/=3
 //status $avg 1
-status "here" 1
+//status "here" 1
+
+//Improve the guess. Apply the formula x1 = (x0 + S / x0) / 2. The number x1 is a better approximation to sqrt(S).
+
+s = 0
+s+=$v//The sum of the squares
+//status "s $s" 1
+
+tmp = 0
+//X0 is our initial guess I chose for our initial guess to be the average of the unsquared values. We are going to find successive exes that should be closer estimates to the square root of S or the sum of the squares.
+x0 = 0
+x1 = 0
+x2 = 0
+x3 = 0
+
+x0+=$avg
+
+//status "x0 $x0, avg $avg, x1 $x1, x2 $x2, x3 $x3, s $s, v $v, tmp $tmp" 1
+
+//S will be zero if the player is not moving which means the sum of the squares is 0.
+if $s == 0 {
+status "S is zero" 1
+} else {
+//(x0 + s / x0)/2
+tmp+=$s  
+//status "tmp $tmp" 1
+tmp/=$x0 
+//status "tmp $tmp" 1
+x0+=$tmp
+//status "x0 $x0" 1
+x0/=2
+//status "x0 $x0" 1
+x1+=$x0 
+status "x0 $x0,x1 $x1,global.playerDeltaX $global.playerDeltaX,global.playerDeltaY $global.playerDeltaY,global.playerDeltaZ $global.playerDeltaZ" 1
+//
+//status $x1 1
+}
+
+    
+
 
 player check position global.lastX global.lastY global.lastZ
 //status "global.playerNormX $global.playerNormX , $global.playerX $global.playerNormY , $global.playerY $global.playerNormZ , $global.playerZ" 1

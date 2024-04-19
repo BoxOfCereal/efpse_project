@@ -1,3 +1,7 @@
+## Things you can do some things you can't
+Can't use giant decoration as a sky box because it gets culled
+
+
 Yes, exactly. The line of sight represents the direction in which the camera is facing. In a 3D environment, it's often represented as a vector starting from the camera's position and extending outward in the direction the camera is pointed.
 
 So, if you have the coordinates of the camera and you calculate the line of sight using trigonometric calculations based on the camera's rotation angles, the resulting point represents where the camera is facing or what it's looking at in the scene. It's essentially the point in 3D space that the camera's lens is pointed towards.
@@ -126,3 +130,10 @@ global.arg2+=3
 
 //call sqrtEstimate
 //status $global.funcResult 1
+
+
+
+
+
+
+

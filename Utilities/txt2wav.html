@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text to WAV</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+  }
+  pre, ul {
+    flex: 1;
+    margin-right: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  textarea {
+    width: 100%;
+    max-width: 500px;
+    height: 150px;
+    resize: vertical;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  button {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <h1>Text to WAV Converter</h1>
+  <p>
+    This tool allows you to generate WAV files from text input. You can either paste a list of sound names (each on a separate line) or enter a single sound name along with an optional file name.
+  </p>
+  <p> NOTE!! Turn your audio down!<br><br>
+    Before the wave files downloaded the web speech synthesis needs to create an utterance so you will auditably hear the generated audio before the download for each of the downloads. Just don't keep your volume up :)</p>
+  <p>You can also paste in a list of sound import statements from EFPSE FSM files.</p>
+  <div class="container">
+    <pre>
+      sound WeaponFire0
+      sound WeaponFire1
+      sound WeaponFire2
+      sound WeaponFire3
+      sound WeaponCharge0
+      sound WeaponCharge1
+      sound WeaponCharge2
+      sound WeaponCharge3
+      sound WeaponChargeRelease
+      sound WeaponOutOfAmmo
+      sound WeaponOutOfAmmo2
+    </pre>
+    <span class="arrow">-></span>
+    <span class=""">Generate WAV files</span>
+    <span class="arrow">-></span>
+    <ul>
+      <li>WeaponFire0.wav</li>
+      <li>WeaponFire1.wav</li>
+      <li>WeaponFire2.wav</li>
+      <li>WeaponFire3.wav</li>
+      <li>WeaponCharge0.wav</li>
+      <li>WeaponCharge1.wav</li>
+      <li>WeaponCharge2.wav</li>
+      <li>WeaponCharge3.wav</li>
+      <li>WeaponChargeRelease.wav</li>
+      <li>WeaponOutOfAmmo.wav</li>
+      <li>WeaponOutOfAmmo2.wav</li>
+    </ul>
+  </div>
+  <label for="textInput">Paste your list of sound names:</label>
+  <textarea id="textInput" placeholder="Paste your list of sound names here"></textarea>
+  <label for="singleSoundInput">Enter a single sound name:</label>
+  <input type="text" id="singleSoundInput" placeholder="Enter a single sound name">
+  <label for="fileNameInput">Enter file name (optional):</label>
+  <input type="text" id="fileNameInput" placeholder="Enter file name (optional)">
+  <button id="generateButton">Generate Sounds</button>
+
+  <script>
+    document.getElementById('generateButton').addEventListener('click', function() {
+      var text = document.getElementById('textInput').value.trim();
+      var fileName = document.getElementById('fileNameInput').value.trim();
+
+      if (text !== '') {
+        var lines = text.split('\n');
+        
+        lines.forEach(function(line) {
+          var soundName = line.trim();
+          if (soundName.toLowerCase().startsWith('sound ')) {
+            soundName = soundName.substring(6).trim();
+            if (soundName !== '') {
+              generateWav(soundName, fileName);
+            }
+          }
+        });
+      } else {
+        var singleSoundName = document.getElementById('singleSoundInput').value.trim();
+        if (singleSoundName !== '') {
+          generateWav(singleSoundName, fileName);
+        }
+      }
+    });
+
+    function generateWav(soundName, fileName) {
+      var utterance = new SpeechSynthesisUtterance(soundName);
+      window.speechSynthesis.
+      window.speechSynthesis.speak(utterance);
+
+      utterance.onend = function() {
+        // Convert the speech synthesis to a Blob
+        var blob = new Blob([new Uint8Array(0)], { type: 'audio/wav' });
+
+        // Create an audio element to generate the Blob URL
+        var audio = document.createElement('audio');
+        var url = URL.createObjectURL(blob);
+        audio.src = url;
+
+        // Create an anchor element to trigger the download
+        var anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = (fileName || soundName.replace(/\s/g, '_').toLowerCase()) + '.wav';
+        anchor.click();
+
+        // Clean up
+        URL.revokeObjectURL(url);
+      };
+    }
+  </script>
+</body>
+</html>

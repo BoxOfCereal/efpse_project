@@ -42,6 +42,9 @@ global.playerZ = 0
 global.playerNormX = 0
 global.playerNormY = 0
 global.playerNormZ = 0
+global.playerDeltaX = 0
+global.playerDeltaY = 0
+global.playerDeltaZ = 0
 
 
 // Variables for functions
