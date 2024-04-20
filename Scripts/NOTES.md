@@ -137,3 +137,48 @@ global.arg2+=3
 
 
 
+image chargeweapon 0 89
+sound firespray0
+sound firespray1
+sound firespray2
+sound firespray3
+sound gasreload
+sound weaponoutofgas
+
+state DRAW IDLE 0
+frame 0 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 SETVAR global.weapon 1
+frame 2 0.25 0 0 0 SETVAR global.wState "DRAW"
+frame 3 0.25 0 0 0 SETAMMO $global.gas 1
+frame 5 0.25 0 0 0 SETSTAT range 1
+frame 7 0.25 0 0 0 SETSTAT spread 16
+frame 9 0.25 0 0 0 NONE
+frame 10 0.25 0 0 0 READY
+
+state IDLE NONE 0
+frame 10 0.25 0 0 0 NONE
+frame 11 0.25 0 0 0 SETVAR global.wState "IDLE"
+frame 12 0.25 0 0 0 INCREMENT global.gas 1
+frame 13 0.25 0 0 0 CLAMP gas 0 $global.sizeGasTank
+frame 15 0.25 0 0 0 NONE
+frame 14 0.25 0 0 0 READY
+
+state ATTACK IDLE 0
+frame 20 .025 0 0 0 NONE
+frame 21 .025 0 0 0 SETVAR global.wState "ATTACK"
+frame 21 .025 0 0 0 JUMPIFLESS global.gas 1 RELOAD
+frame 23 .025 0 0 0 DECREMENT global.gas 1
+frame 24 .025 0 0 0 CLAMP global.gas 0 $global.sizeGasTank
+frame 25 .025 0 0 0 SOUNDANDATTACK 0
+frame 26 .025 0 0 0 NONE
+frame 25 .025 0 0 0 READY
+
+state RELOAD IDLE 0
+frame 31 0.25 0 0 0 NONE
+frame 32 0.25 0 0 0 SETVAR global.wState "RELOAD"
+frame 33 0.1 0 0 0 SOUND 1
+frame 34 0.1 0 0 0 INCREMENT global.gas 25
+frame 35 0.1 0 0 0 CLAMP global.gas 0 $global.sizeGasTank
+frame 36 0.1 0 0 0 SETSTAT bullets $global.gas
+frame 37 0.1 0 0 0 NONE
+frame 38 0.1 0 0 0 READY

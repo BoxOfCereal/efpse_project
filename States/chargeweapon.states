@@ -1,0 +1,210 @@
+image chargeweapon 0 89
+sound FireSpray0
+sound FireSpray1
+sound FireSpray2
+sound FireSpray3
+sound WeaponCharge0
+sound WeaponCharge1
+sound WeaponCharge2
+sound WeaponCharge3
+sound WeaponFire0
+sound WeaponFire1
+sound WeaponFire2
+sound WeaponFire3
+sound WeaponRecharge
+sound WeaponOutOfGas
+
+
+state DRAW IDLE 0
+frame 0 0.25 0 0 0 NONE
+frame 1 0.25 0 0 0 SETVAR global.weapon 1
+frame 2 0.25 0 0 0 SETVAR global.wState "DRAW"
+frame 3 0.25 0 0 0 SETAMMO $global.gas
+frame 4 0.25 0 0 0 SETVAR charge 0
+frame 5 0.25 0 0 0 SETAMMO $charge 1
+frame 6 0.25 0 0 0 SETVAR cooloff 0
+frame 7 0.25 0 0 0 NONE
+frame 8 0.25 0 0 0 NONE
+
+state IDLE NONE 0
+frame 10 0.25 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "IDLE"
+frame 11 0.25 0 0 0 JUMPIFGREATER global.cooloff 0 COOLDOWN
+frame 12 0.25 0 0 0 INCREMENT global.gas 1
+frame 13 0.25 0 0 0 CLAMP gas 0 $global.sizeGasTank
+frame 14 0.25 0 0 0 READY
+frame 14 0.25 0 0 0 NONE
+
+state ALTATTACK RELEASE 0
+frame 30 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "ALTATTACK"
+frame 30 0.25 0 0 0 JUMPIFGREATER global.cooloff 0 COOLDOWN
+frame 30 .025 0 0 0 JUMPIFGREATER charge 74 ALTATTACKLEVEL3
+frame 30 .025 0 0 0 JUMPIFGREATER charge 49 ALTATTACKLEVEL2 
+frame 30 .025 0 0 0 JUMPIFGREATER charge 24 ALTATTACKLEVEL1 
+frame 30 .025 0 0 0 INCREMENT charge 5
+frame 30 .025 0 0 0 CLAMP charge 0 $global.sizeChargeTank
+frame 30 .025 0 0 0 SETAMMO $charge 1
+frame 30 .025 0 0 0 SOUND 9
+frame 30 .025 0 0 0 NONE
+frame 30 .025 0 0 0 NONE
+
+state ALTATTACKLEVEL1 RELEASE 0
+frame 31 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "ALTATTACKLEVEL1"
+frame 31 .025 0 0 0 INCREMENT charge 5
+frame 31 .025 0 0 0 CLAMP charge 0 $global.sizeGasTank
+frame 31 .025 0 0 0 SETAMMO $charge 1
+frame 31 .025 0 0 0 SOUND 10
+frame 31 .025 0 0 0 NONE
+frame 31 .025 0 0 0 NONE
+frame 31 .025 0 0 0 NONE
+frame 31 .025 0 0 0 NONE
+
+state ALTATTACKLEVEL2 RELEASE 0
+frame 32 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "ALTATTACKLEVEL2"
+frame 32 .025 0 0 0 INCREMENT charge 5
+frame 32 .025 0 0 0 CLAMP charge 0 $global.sizeGasTank
+frame 32 .025 0 0 0 SETAMMO $charge 1
+frame 32 .025 0 0 0 SOUND 11
+frame 32 .025 0 0 0 NONE
+frame 32 .025 0 0 0 NONE
+frame 32 .025 0 0 0 NONE
+frame 32 .025 0 0 0 NONE
+
+
+state ALTATTACKLEVEL3 RELEASE 0
+frame 33 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "ALTATTACKLEVEL3"
+frame 33 .025 0 0 0 INCREMENT charge 5
+frame 33 .025 0 0 0 CLAMP charge 0 $global.sizeGasTank
+frame 33 .025 0 0 0 SETAMMO $charge 1
+frame 33 .025 0 0 0 SOUND 12
+frame 33 .025 0 0 0 NONE
+frame 33 .025 0 0 0 NONE
+frame 33 .025 0 0 0 NONE
+frame 33 .025 0 0 0 NONE
+
+state RELEASE COOLDOWN 0
+frame 34 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "RELEASE"
+frame 34 .025 0 0 0 SETSTAT damage $charge
+frame 34 .025 0 0 0 JUMPIFGREATER charge 74 RELEASELEVEL3
+frame 34 .025 0 0 0 JUMPIFGREATER charge 49 RELEASELEVEL2
+frame 34 .025 0 0 0 JUMPIFGREATER charge 24 RELEASELEVEL1
+frame 34 .025 0 0 0 SETSTAT spread 0
+frame 34 .025 0 0 0 SETSTAT range 256
+frame 34 .025 0 0 0 SETSTAT firerate 1
+frame 34 .025 0 0 0 SETSTAT projectilespeed 300
+frame 34 .025 0 0 0 SETVAR global.cooloff $charge
+frame 34 .025 0 0 0 DIVIDE charge 2
+frame 34 .025 0 0 0 SETSTAT recoil $charge
+frame 34 .025 0 0 0 SOUNDANDATTACK 9
+frame 34 .025 0 0 0 SETVAR charge 0
+frame 34 .025 0 0 0 SETSTAT recoil 0
+
+state RELEASELEVEL1 COOLDOWN 0
+frame 35 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "RELEASELEVEL1"
+frame 35 .025 0 0 0 SETSTAT spread 0
+frame 35 .025 0 0 0 SETSTAT range 512
+frame 35 .025 0 0 0 SETSTAT firerate 1
+frame 35 .025 0 0 0 SETSTAT projectilespeed 400
+frame 35 .025 0 0 0 SETVAR global.cooloff $charge
+frame 35 .025 0 0 0 DIVIDE charge 2
+frame 35 .025 0 0 0 SETSTAT recoil $charge
+frame 35 .025 0 0 0 SOUNDANDATTACK 10
+frame 35 .025 0 0 0 SETVAR charge 0
+frame 35 .025 0 0 0 SETSTAT recoil 0
+
+state RELEASELEVEL2 COOLDOWN 0
+frame 36 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "RELEASELEVEL2"
+frame 36 .025 0 0 0 SETSTAT spread 0
+frame 36 .025 0 0 0 SETSTAT range 768
+frame 36 .025 0 0 0 SETSTAT firerate 1
+frame 36 .025 0 0 0 SETSTAT projectilespeed 500
+frame 36 .025 0 0 0 SETVAR global.cooloff $charge
+frame 36 .025 0 0 0 DIVIDE charge 2
+frame 36 .025 0 0 0 SETSTAT recoil $charge
+frame 36 .025 0 0 0 SOUNDANDATTACK 11
+frame 36 .025 0 0 0 SETVAR charge 0
+frame 36 .025 0 0 0 SETSTAT recoil 0
+
+state RELEASELEVEL3 COOLDOWN 0
+frame 37 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "RELEASELEVEL3"
+frame 37 .025 0 0 0 SETSTAT spread 0
+frame 37 .025 0 0 0 SETSTAT range 1024
+frame 37 .025 0 0 0 SETSTAT firerate 1
+frame 37 .025 0 0 0 SETSTAT projectilespeed 600
+frame 37 .025 0 0 0 SETVAR global.cooloff $charge
+frame 37 .025 0 0 0 DIVIDE charge 2
+frame 37 .025 0 0 0 SETSTAT recoil $charge
+frame 37 .025 0 0 0 SOUNDANDATTACK 12
+frame 37 .025 0 0 0 SETVAR charge 0
+frame 37 .025 0 0 0 SETSTAT recoil 0
+
+state RELOAD IDLE 0
+frame 38 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "RELOAD"
+frame 38 .025 0 0 0 INCREMENT global.gas 25
+frame 38 .025 0 0 0 CLAMP global.gas 0 $global.sizeGasTank
+frame 38 .025 0 0 0 SETAMMO $global.gas
+frame 38 .025 0 0 0 DECREMENT cooloff 25
+frame 38 .025 0 0 0 CLAMP cooloff 0 $global.cooloffLength
+frame 38 .025 0 0 0 SOUND 13
+frame 38 .025 0 0 0 NONE
+
+state ATTACK IDLE 0
+frame 60 .025 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "ATTACK"
+frame 61 0.25 0 0 0 JUMPIFGREATER global.cooloff 0 COOLDOWN
+frame 62 .025 0 0 0 JUMPIFEQUALS global.gas 0 OOA
+frame 63 .025 0 0 0 SETSTAT spread 32
+frame 64 .025 0 0 0 SETSTAT range 64
+frame 65 .025 0 0 0 SETSTAT recoil 0
+frame 66 .025 0 0 0 SETSTAT firerate 50
+frame 67 .025 0 0 0 SETSTAT projectilespeed 250
+frame 68 .025 0 0 0 DECREMENT global.gas 1
+frame 69 .025 0 0 0 CLAMP global.gas 0 $global.sizeGasTank
+frame 69 .025 0 0 0 SETAMMO $global.gas
+frame 69 .025 0 0 0 JUMPIFLESS global.gas 6 LASTFIVE
+frame 69 .025 0 0 0 JUMPIFLESS global.gas 11 LASTTEN
+frame 69 .025 0 0 0 JUMPIFLESS global.gas 16 LASTFIFTEEN
+frame 69 .025 0 0 0 SOUNDANDATTACK 0
+frame 69 .025 0 0 0 READY
+frame 69 .025 0 0 0 NONE
+
+state LASTFIVE IDLE 0
+frame 1 .025 0 0 0 NONE
+frame 1 .025 0 0 0 SOUNDANDATTACK 1
+frame 1 .025 0 0 0 READY
+
+state LASTTEN IDLE 0
+frame 1 .025 0 0 0 NONE
+frame 1 .025 0 0 0 SOUNDANDATTACK 2
+frame 1 .025 0 0 0 READY
+
+state LASTFIFTEEN IDLE 0
+frame 1 .025 0 0 0 NONE
+frame 1 .025 0 0 0 SOUNDANDATTACK 3
+frame 1 .025 0 0 0 READY
+
+state OOA IDLE 0
+frame 1 .025 0 0 0 NONE
+frame 1 .025 0 0 0 SOUND 9
+frame 1 .025 0 0 0 NONE
+
+state COOLDOWN NONE 0
+frame 1 0.5 0 0 0 NONE
+frame 1 0.5 0 0 0 DECREMENT global.cooloff 1
+frame 1 0.5 0 0 0 SETAMMO $global.cooloff 1
+frame 1 0.5 0 0 0 CLAMP global.cooloff 0 $global.cooloffLength
+frame 1 0.5 0 0 0 JUMPIFEQUALS cooloff 0 REFRESH
+
+state REFRESH IDLE 0
+frame 1 0.5 0 0 0 NONE
+frame 1 0.5 0 0 0 READY
+

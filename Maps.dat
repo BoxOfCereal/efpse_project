@@ -32,6 +32,40 @@ None
 None
 None
 0 None None None None 0
+test.map
+None
+None
+None
+[EX]trigger.script
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None 0
+255 255 255
+0 0 0 1000
+255 255 255 64
+255 255 255 128
+255 255 255 256
+None
+None
+None
+None
+2 None None None None 0
 weapon_room.eem
 None
 None
@@ -66,40 +100,6 @@ None
 None
 None
 0 None None None None 1
-test.map
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None 0
-255 255 255
-0 0 0 1000
-255 255 255 64
-255 255 255 128
-255 255 255 256
-None
-None
-None
-None
-0 None None None None 0
 town.eem
 None
 None

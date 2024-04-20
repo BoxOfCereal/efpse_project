@@ -1,0 +1,19 @@
+```STATES
+sound WeaponCharge0
+sound WeaponCharge1
+sound WeaponCharge2
+sound WeaponCharge3
+
+...
+
+state ALTATTACK RELEASE 0
+frame 2 .125 0 0 0 NONE
+frame 1 .125 0 0 0 INCREMENT charge 5
+frame 1 0.25 0 0 0 CLAMP charge 0 100
+frame 1 0.25 0 0 0 SETAMMO $charge 
+//lengthy process to map charge to indexwhere index [0-3]
+frame 3 .125 0 0 0 SOUND $index //[0-3]
+frame 3 .125 0 0 0 NONE
+
+...
+```

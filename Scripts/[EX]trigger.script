@@ -1,0 +1,4 @@
+global.touched = 1
+player move 0 0 64
+keeptrigger
+map quickreturn KeepSounds3

@@ -1,6 +1,7 @@
 bind i inv
 bind z dodge
 bind j journal
+bind shift run
 
 
 

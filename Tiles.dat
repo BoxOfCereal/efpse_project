@@ -242,4 +242,55 @@ cornerslope 0 0 0 32 -32 -32 32 -32 32 32
 tile ground_32_slope_UR
 cornerslope 0 0 0 32 -32 32 -32 -32 32 -32
 tile test1
-polygon 0 0 0 64 -32 -32 32 -32 32 32 -32 32
+
+tile climbable_wall_D
+polygon 0 0 -16 64 -32 -16 32 -16 32 16 -32 16
+polygon 16 8 0 16 -8 -4 8 -4 8 4 -8 4
+polygon -16 4 0 16 -8 -4 8 -4 8 4 -8 4
+polygon -16 32 0 16 -8 -4 8 -4 8 4 -8 4
+polygon 16 38 0 16 -8 -4 8 -4 8 4 -8 4
+cap
+tile wood_beam_1F_l
+polygon -24 0 0 64 -8 -8 8 -8 8 8 -8 8
+tile wood_beam_1F_R
+polygon 24 0 0 64 -8 -8 8 -8 8 8 -8 8
+tile wood_beam_1F_D
+polygon 0 0 24 64 -8 -8 8 -8 8 8 -8 8
+tile wood_beam_1F_U
+polygon 0 0 -24 64 -8 -8 8 -8 8 8 -8 8
+tile wood_beam_2F_L
+polygon -24 0 0 64 -8 -8 8 -8 8 8 -8 8
+polygon -24 48 20 16 -8 -12 8 -12 8 12 -8 12
+polygon -24 48 -20 16 -8 -12 8 -12 8 12 -8 12
+polygon 8 48 0 16 -24 -8 24 -8 24 8 -24 8
+cap
+doublesided
+tile wood_beam_I_2F_L
+polygon -24 48 0 16 -8 -32 8 -32 8 32 -8 32
+tile wood_beam_2F_R
+polygon 24 0 0 64 -8 -8 8 -8 8 8 -8 8
+polygon 24 48 20 16 -8 -12 8 -12 8 12 -8 12
+polygon 24 48 -20 16 -8 -12 8 -12 8 12 -8 12
+polygon -8 48 0 16 -24 -8 24 -8 24 8 -24 8
+tile wood_beam_I_2F_H
+polygon 0 48 0 16 -32 -8 32 -8 32 8 -32 8
+tile wood_beam_I_2F_R
+polygon 24 48 0 16 -8 -32 8 -32 8 32 -8 32
+tile beam_frame_outset_low_L
+polygon -28 0 0 8 -4 -32 4 -32 4 32 -4 32
+tile beam_frame_outset_high_LT
+polygon -28 0 -28 64 -4 -4 4 -4 4 4 -4 4
+polygon -28 56 4 8 -4 -28 4 -28 4 28 -4 28
+tile beam_frame_outset_high_LD
+polygon -28 0 28 64 -4 -4 4 -4 4 4 -4 4
+polygon -28 56 -4 8 -4 -28 4 -28 4 28 -4 28
+tile beam_frame_outset_high_L
+polygon -28 56 0 8 -4.5 -32 4.5 -32 4.5 32 -4.5 32
+tile YE
+polygon -16 0 -28 32 -4 -4 4 -4 4 4 -4 4
+polygon -8 24 -28 32 -4 -4 4 -4 4 4 -4 4
+polygon -24 24 -28 32 -4 -4 4 -4 4 4 -4 4
+polygon 8 0 -28 56 -4 -4 4 -4 4 4 -4 4
+polygon 20 48 -28 8 -8 -4 8 -4 8 4 -8 4
+polygon 20 0 -28 8 -8 -4 8 -4 8 4 -8 4
+polygon 20 20 -28 8 -8 -4 8 -4 8 4 -8 4

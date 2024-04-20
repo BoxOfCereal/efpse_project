@@ -1,0 +1,3 @@
+global.shiftIsDown = 1
+//status "global.shiftIsDown $global.shiftIsDown, deltaX $global.deltaX, deltaY $global.deltaY, deltaZ $global.deltaZ" 1
+map quickreturn keepsounds3

@@ -36,15 +36,32 @@ global.pStateInvisible = 0
 global.lastX = 0
 global.lastY = 0
 global.lastZ = 0
-global.playerX = 0
-global.playerY = 0
-global.playerZ = 0
-global.playerNormX = 0
-global.playerNormY = 0
-global.playerNormZ = 0
-global.playerDeltaX = 0
-global.playerDeltaY = 0
-global.playerDeltaZ = 0
+global.X = 0
+global.Y = 0
+global.Z = 0
+global.NormX = 0
+global.NormY = 0
+global.NormZ = 0
+global.DeltaX = 0
+global.DeltaY = 0
+global.DeltaZ = 0
+
+
+//WEAPONS
+global.weapon = 0
+global.wState = "none"
+//FLAME THROWER
+
+global.gas = 0
+global.sizeGasTank = 100
+
+//DRAGONADE
+global.d_charge = 0
+
+
+//triggers
+//touched
+global.touched =  0
 
 
 // Variables for functions

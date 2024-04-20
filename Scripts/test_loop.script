@@ -1,42 +1,42 @@
 //Fix me cannot use procedures in the loop scripts have to get the Babylonian square root estimation by hand below can't use loops
 //player check position [varX] [varY] [varZ] - sets variable x/y/z to the player's current position.
-player check position global.playerX global.playerY global.playerZ
+player check position global.X global.Y global.Z
 
-global.playerDeltaX*=0
-global.playerDeltaY*=0
-global.playerDeltaZ*=0
+global.deltaX*=0
+global.deltaY*=0
+global.deltaZ*=0
 
-global.playerNormX*=0
-global.playerNormY*=0
-global.playerNormZ*=0
+global.NormX*=0
+global.NormY*=0
+global.NormZ*=0
 
-global.playerNormX+="$global.playerX"
-global.playerNormX-=$global.lastX
-global.playerDeltaX+=$global.playerNormX//store delta
-global.playerNormX*=$global.playerNormX//Square it
+global.NormX+="$global.X"
+global.NormX-=$global.lastX
+global.deltaX+=$global.NormX//store delta
+global.NormX*=$global.NormX//x^2
 
-global.playerNormY+="$global.playerY"
-global.playerNormY-=$global.lastY
-global.playerDeltaY+=$global.playerNormY//store delta
-global.playerNormY*=$global.playerNormY//Square it
+global.NormY+="$global.Y"
+global.NormY-=$global.lastY
+global.deltaY+=$global.NormY//store delta
+global.NormY*=$global.NormY//y^2
 
-global.playerNormZ+="$global.playerZ"
-global.playerNormZ-=$global.lastZ
-global.playerDeltaZ+=$global.playerNormZ//store delta
-global.playerNormZ*=$global.playerNormZ//Square it
+global.NormZ+="$global.Z"
+global.NormZ-=$global.lastZ
+global.deltaZ+=$global.NormZ//store delta
+global.NormZ*=$global.NormZ//z^2
 
 //get ||v|| = sqrt(x^2 + y^2 + z^2)
 v*=0
-v+=$global.playerNormX//x^2
-v+=$global.playerNormY//y^2
-v+=$global.playerNormZ//z^2
+v+=$global.NormX//x^2
+v+=$global.NormY//y^2
+v+=$global.NormZ//z^2
 //status $v 1
 
 
 //1 get guess
-avg = $global.playerNormX
-avg+=$global.playerNormY
-avg+=$global.playerNormZ
+avg = $global.NormX
+avg+=$global.NormY
+avg+=$global.NormZ
 
 avg/=3
 //status $avg 1
@@ -61,7 +61,7 @@ x0+=$avg
 
 //S will be zero if the player is not moving which means the sum of the squares is 0.
 if $s == 0 {
-status "S is zero" 1
+//status "S is zero" 1
 } else {
 //(x0 + s / x0)/2
 tmp+=$s  
@@ -73,7 +73,7 @@ x0+=$tmp
 x0/=2
 //status "x0 $x0" 1
 x1+=$x0 
-status "x0 $x0,x1 $x1,global.playerDeltaX $global.playerDeltaX,global.playerDeltaY $global.playerDeltaY,global.playerDeltaZ $global.playerDeltaZ" 1
+//status "x0 $x0,x1 $x1,global.deltaX $global.deltaX,global.deltaY $global.deltaY,global.deltaZ $global.deltaZ" 1
 //
 //status $x1 1
 }
@@ -82,5 +82,13 @@ status "x0 $x0,x1 $x1,global.playerDeltaX $global.playerDeltaX,global.playerDelt
 
 
 player check position global.lastX global.lastY global.lastZ
-//status "global.playerNormX $global.playerNormX , $global.playerX $global.playerNormY , $global.playerY $global.playerNormZ , $global.playerZ" 1
+//status "global.NormX $global.NormX , $global.X $global.NormY , $global.Y $global.NormZ , $global.Z" 1
 
+
+if $global.shiftIsDown == 1 {
+player speed 400
+} else {
+player speed 250
+}
+
+status "touched $global.touched" 1

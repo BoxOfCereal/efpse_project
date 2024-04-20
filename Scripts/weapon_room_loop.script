@@ -1,1 +1,1 @@
-status "$global.wState" 1
+status "$global.wState, global.d_charge: $global.d_charge , " .2

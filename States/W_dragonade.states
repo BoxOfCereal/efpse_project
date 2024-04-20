@@ -1,0 +1,46 @@
+image dragonade 0 49
+sound dcharge
+sound dfire
+sound reload
+
+state DRAW IDLE 0
+frame 0 0.25 0 0 0 NONE
+frame 2 0.25 0 0 0 SETVAR global.wState "DRAW"
+frame 1 0.25 0 0 0 SETVAR global.weapon 3
+frame 3 0.25 0 0 0 SETAMMO $global.d_charge
+frame 5 0.25 0 0 0 SETSTAT range 250
+frame 6 0.25 0 0 0 SETSTAT projectilespeed 250
+frame 7 0.25 0 0 0 SETSTAT spread 0
+frame 9 0.25 0 0 0 NONE
+frame 9 0.25 0 0 0 READY
+
+state IDLE NONE 0
+frame 10 0.25 0 0 0 NONE
+frame 11 0.25 0 0 0 JUMPIFGREATER global.d_charge 0 RELEASE
+frame 12 0.25 0 0 0 SETVAR global.wState "IDLE"
+frame 13 0.25 0 0 0 NONE
+frame 14 0.25 0 0 0 READY
+
+state ATTACK IDLE 0
+frame 20 .25 0 0 0 NONE
+frame 21 .25 0 0 0 SETVAR global.wState "ATTACK"
+frame 25 .25 0 0 0 INCREMENT global.d_charge 1
+frame 3 0.25 0 0 0 GIVEAMMO $global.d_charge 0
+frame 25 .25 0 0 0 READY
+
+state RELEASE IDLE 0
+frame 31 0.25 0 0 0 NONE
+frame 32 0.25 0 0 0 SETVAR global.wState "RELEASE"
+frame 33 0.25 0 0 0 SETVAR global.d_charge 0
+frame 34 0.25 0 0 0 SETVAR explosion_radius 1
+frame 35 0.25 0 0 0 INCREMENT explosion_radius $global.d_charge
+frame 36 0.25 0 0 0 SETSTAT explosion $explosion_radius
+frame 37 0.25 0 0 0 SOUNDANDATTACK 1
+frame 38 0.25 0 0 0 READY
+
+state RELOAD IDLE 0
+frame 41 0.25 0 0 0 NONE
+frame 42 0.25 0 0 0 SETVAR global.wState "RELOAD"
+frame 43 0.25 0 0 0 GIVEAMMO $global.gas 0
+frame 44 0.1 0 0 0 RELOAD
+frame 45 0.1 0 0 0 READY

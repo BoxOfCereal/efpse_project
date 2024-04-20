@@ -1,0 +1,3 @@
+sound dcharge
+sound dfire
+sound reload
