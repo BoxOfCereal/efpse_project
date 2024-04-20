@@ -19,6 +19,8 @@ def text_to_speech(input_file):
 
     EX:
     sound dcharge -> audio_files/dcharge.wav
+    sound dfire -> audio_files/dfire.wav
+    sound reload -> audio_files/reload.wav
 
     """
     # Create folder if it doesn't exist
